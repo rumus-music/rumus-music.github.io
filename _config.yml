@@ -4,8 +4,8 @@ email: contact@rumusmusic.com
 description: >-
   Kumpulan chord kunci gitar dasar dan mudah disertai lirik lagu Indonesia maupun Mancanegara.
   Terdapat ribuan chord gitar dari artis / band pada database kami.
-baseurl: "rumusmusic.github.io" # the subpath of your site, e.g. /blog
-url: "https://rumusmusic.github.io" # the base hostname & protocol for your site
+baseurl: "rumus-music.github.io" # the subpath of your site, e.g. /blog
+url: "https://rumus-music.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
