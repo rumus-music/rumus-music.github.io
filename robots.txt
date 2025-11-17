@@ -1,0 +1,16 @@
+# Allow Google AdSense crawler
+User-agent: Mediapartners-Google
+Disallow:
+
+# Allow Googlebot (for SEO)
+User-agent: Googlebot
+Disallow:
+
+# Block all other bots from crawling certain folders
+User-agent: *
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /test/
+
+# Sitemap location
+Sitemap: https://rumus-music.github.io/sitemap.xml
