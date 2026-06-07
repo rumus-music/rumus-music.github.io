@@ -1,0 +1,30 @@
+body{
+margin:0;
+font-family:Poppins;
+background:#0B0F1A;
+color:white;
+}
+
+.topbar{
+padding:15px;
+text-align:center;
+font-weight:700;
+background:linear-gradient(90deg,#7C3AED,#2563EB);
+}
+
+.container{
+padding:15px;
+}
+
+.card{
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.1);
+padding:15px;
+border-radius:15px;
+margin-bottom:12px;
+backdrop-filter:blur(10px);
+}
+
+h1,h3{
+margin:0 0 10px 0;
+}
