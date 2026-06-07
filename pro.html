@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RumusMusic Pro</title>
+
+<meta name="theme-color" content="#0B0F1A">
+
+<!-- SEO -->
+<meta name="description" content="RumusMusic Pro - Music Search + Premium Support + Donation Goal">
+
+<!-- Ads -->
+<meta name="google-adsense-account" content="ca-pub-4848025323084395">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395" crossorigin="anonymous"></script>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--bg:#0B0F1A;
+--card:rgba(255,255,255,0.06);
+--stroke:rgba(255,255,255,0.12);
+--p1:#7C3AED;
+--p2:#2563EB;
+--text:#fff;
+--muted:#aaa;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+
+body{
+background:radial-gradient(circle at top,#111827,#0B0F1A);
+color:var(--text);
+}
+
+/* HEADER */
+header{
+padding:18px;
+text-align:center;
+font-weight:700;
+background:linear-gradient(90deg,var(--p1),var(--p2));
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-size:22px;
+}
+
+/* CARD */
+.card{
+background:var(--card);
+border:1px solid var(--stroke);
+margin:12px;
+padding:15px;
+border-radius:16px;
+backdrop-filter:blur(12px);
+}
+
+/* BUTTON */
+.btn{
+display:inline-block;
+padding:10px 14px;
+border-radius:12px;
+background:linear-gradient(135deg,var(--p1),var(--p2));
+color:#fff;
+text-decoration:none;
+font-size:13px;
+}
+
+/* PROGRESS BAR */
+.progress{
+width:100%;
+height:14px;
+background:#1f2937;
+border-radius:20px;
+overflow:hidden;
+margin-top:10px;
+}
+
+.bar{
+height:100%;
+width:40%;
+background:linear-gradient(90deg,#22c55e,#16a34a);
+transition:0.5s;
+}
+
+/* PREMIUM */
+.premium{
+background:linear-gradient(135deg,#7C3AED,#2563EB);
+text-align:center;
+color:#fff;
+}
+
+.locked{
+filter:blur(6px);
+pointer-events:none;
+}
+
+/* INPUT */
+input{
+width:100%;
+padding:10px;
+border-radius:10px;
+border:none;
+margin-top:8px;
+}
+
+/* SMALL */
+small{color:var(--muted);}
+</style>
+</head>
+
+<body>
+
+<header>🎵 RumusMusic PRO</header>
+
+<!-- DONATION -->
+<div class="card">
+<h3>💰 Donation Goal</h3>
+<small>Target: $1000 untuk upgrade server</small>
+
+<div class="progress">
+<div class="bar" id="bar"></div>
+</div>
+
+<p style="margin-top:8px;">Progress: <span id="percent">40%</span></p>
+
+<p style="margin-top:10px;">
+Wallet:<br>
+<code>0x5e8bade6e0bce65807db6327cb1d9eeb7c6a6a5b</code>
+</p>
+
+<a class="btn" href="https://etherscan.io/address/0x5e8bade6e0bce65807db6327cb1d9eeb7c6a6a5b" target="_blank">
+View Wallet
+</a>
+</div>
+
+<!-- UPDATE PROGRESS -->
+<div class="card">
+<h3>📊 Update Donation Progress (Admin Demo)</h3>
+<input type="number" id="input" placeholder="Masukkan % (0-100)">
+<button class="btn" onclick="updateProgress()">Update</button>
+</div>
+
+<!-- PREMIUM -->
+<div class="card premium">
+<h3>⭐ RumusMusic Premium</h3>
+<p>Unlock fitur tanpa iklan + akses cepat</p>
+
+<button class="btn" onclick="unlock()">Aktifkan Premium</button>
+</div>
+
+<!-- PREMIUM CONTENT -->
+<div class="card premium locked" id="premiumBox">
+<h3>🎧 Premium Content</h3>
+<p>Playlist eksklusif, tanpa iklan, akses cepat</p>
+</div>
+
+<script>
+// progress
+function updateProgress(){
+let val = document.getElementById("input").value;
+if(val>100) val=100;
+if(val<0) val=0;
+
+document.getElementById("bar").style.width = val+"%";
+document.getElementById("percent").innerText = val+"%";
+}
+
+// premium unlock (simple local)
+function unlock(){
+localStorage.setItem("premium","true");
+document.getElementById("premiumBox").classList.remove("locked");
+}
+
+if(localStorage.getItem("premium")=="true"){
+document.getElementById("premiumBox").classList.remove("locked");
+}
+</script>
+
+</body>
+</html>
