@@ -1,0 +1,11 @@
+# RumusMusic Robots.txt
+
+User-agent: *
+Allow: /
+
+# Block sensitive or system files
+Disallow: /service-worker.js
+Disallow: /manifest.json
+
+# Sitemap
+Sitemap: https://rumus-music.github.io/sitemap.xml
