@@ -1,0 +1,166 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.music-container {
+    background: #1e1e1e;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    width: 360px;
+    text-align: center;
+}
+
+h2 { color: #1DB954; font-size: 18px; margin-top: 0; letter-spacing: 1px; }
+h4 { text-align: left; font-size: 14px; margin: 10px 0; color: #888; }
+
+/* Desain Komponen Pencarian */
+.search-box {
+    display: flex;
+    margin-bottom: 15px;
+    background: #282828;
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+#search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    outline: none;
+}
+#btn-search {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Kotak Efek Gelombang Musik */
+.visualizer-container {
+    width: 100%;
+    height: 70px;
+    background: #151515;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+#visualizer { width: 100%; height: 100%; display: block; }
+
+.track-info h3 { font-size: 15px; margin: 8px 0; color: #e5e5e5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#time-display { font-size: 12px; color: #888; }
+
+/* Menyembunyikan Video YouTube asli agar berfungsi seperti Mp3 Player */
+#yt-player-hidden { display: none; }
+
+.controls { margin: 15px 0; }
+.controls button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    margin: 0 15px;
+    transition: 0.2s;
+}
+.controls button:hover { color: #1DB954; transform: scale(1.1); }
+
+.progress-container { margin: 15px 0; }
+#progress-bar {
+    width: 100%;
+    accent-color: #1DB954;
+    cursor: pointer;
+}
+
+/* Area Daftar Lagu */
+.playlist {
+    margin-top: 10px;
+    text-align: left;
+    max-height: 160px;
+    overflow-y: auto;
+    border-radius: 8px;
+    background: #171717;
+    padding: 5px;
+}
+.playlist-item {
+    padding: 10px;
+    border-bottom: 1px solid #222;
+    cursor: pointer;
+    font-size: 13px;
+    color: #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.playlist-item:hover, .playlist-item.active { background: #252525; color: #1DB954; }
+/* Modifikasi background body agar transparan & menumpuk di atas bintang */
+body {
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    color: #ffffff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Mengunci layar agar tidak bisa di-scroll keluar */
+}
+
+/* Pastikan kotak pemutar musik mengambang cantik di atas bintang */
+.music-container {
+    background: rgba(30, 30, 30, 0.85); /* Dibuat sedikit transparan */
+    backdrop-filter: blur(10px); /* Efek kaca buram modern */
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    width: 360px;
+    text-align: center;
+    z-index: 10;
+}
+
+/* =======================================================
+   SISTEM ANIMASI PARALLAX BINTANG (BACKGROUND)
+   ======================================================= */
+#stars-layer-1, #stars-layer-2, #stars-layer-3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none; /* Klik tikus tembus ke tombol */
+}
+
+/* Lapisan 1: Bintang Kecil (Bergerak Lambat) */
+#stars-layer-1 {
+    animation: spaceMove 150s linear infinite;
+}
+
+/* Lapisan 2: Bintang Sedang (Bergerak Sedang) */
+#stars-layer-2 {
+    animation: spaceMove 100s linear infinite;
+}
+
+/* Lapisan 3: Bintang Besar & Terang (Bergerak Cepat) */
+#stars-layer-3 {
+    animation: spaceMove 50s linear infinite;
+}
+
+/* Frame pergerakan bintang mengalir dari atas ke bawah */
+@keyframes spaceMove {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-2000px); /* Bergeser sejauh tinggi repetisi */
+    }
+}
