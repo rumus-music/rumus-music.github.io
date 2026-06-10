@@ -201,3 +201,45 @@ if (offlineCache) {
     playlist = JSON.parse(offlineCache);
     renderPlaylist();
 }
+// =======================================================
+// FUNGSI GENERATOR KOORDINAT BINTANG PARALLAX
+// =======================================================
+function generateStars(elementId, count, starSize, starColor) {
+    const container = document.getElementById(elementId);
+    if (!container) return;
+
+    let boxShadowString = "";
+    const screenWidth = window.innerWidth;
+    const screenHeight = 2000; // Tinggi area jangkauan bintang agar repetisi halus
+
+    for (let i = 0; i < count; i++) {
+        const randomX = Math.floor(Math.random() * screenWidth);
+        const randomY = Math.floor(Math.random() * screenHeight);
+        
+        boxShadowString += `${randomX}px ${randomY}px ${starColor}`;
+        if (i < count - 1) {
+            boxShadowString += ", ";
+        }
+    }
+
+    // Suntikkan gaya bintang ke elemen HTML khusus
+    container.style.width = `${starSize}px`;
+    container.style.height = `${starSize}px`;
+    container.style.background = "transparent";
+    container.style.boxShadow = boxShadowString;
+}
+
+// Menjalankan pembuatan bintang saat halaman pertama kali dimuat
+window.addEventListener('DOMContentLoaded', () => {
+    // Parameter: (ID Elemen, Jumlah Bintang, Ukuran Pixel, Warna)
+    generateStars("stars-layer-1", 250, 1, "#ffffff");   // 250 Bintang Kecil
+    generateStars("stars-layer-2", 100, 2, "#e0e0e0");   // 100 Bintang Sedang
+    generateStars("stars-layer-3", 40, 3, "#1DB954");    // 40 Bintang Besar Hijau Neon senada tema
+});
+
+// Otomatis kalkulasi ulang susunan bintang jika ukuran layar browser diubah (Resize)
+window.addEventListener('resize', () => {
+    generateStars("stars-layer-1", 250, 1, "#ffffff");
+    generateStars("stars-layer-2", 100, 2, "#e0e0e0");
+    generateStars("stars-layer-3", 40, 3, "#1DB954");
+});
