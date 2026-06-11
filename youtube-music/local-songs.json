@@ -1,0 +1,4 @@
+[
+  {"title":"Local Song 1","artist":"Artist A","url":"music/song1.mp3","cover":"images/song1.jpg"},
+  {"title":"Local Song 2","artist":"Artist B","url":"music/song2.mp3","cover":"images/song2.jpg"}
+]
