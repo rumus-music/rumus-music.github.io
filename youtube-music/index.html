@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YT Music Pro Ultra</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>RumusMusic Youtube Music Visual equalizer animasi</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4257586289753883"
      crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-4257586289753883">
 <meta name="theme-color" content="#0B0F1A"/>
-<meta name="description" content="RumusMusic Youtube Music Pro Ultra- Cari musik, trending video, dan playlist favorit dengan cepat"/>
+<meta name="description" content="RumusMusic Visual equalizer animasi- Cari musik, trending video, dan playlist favorit dengan cepat"/>
 
 <!-- Google Verification -->
 <meta name="google-site-verification" content="c5Cc9r8Eyp-IXdjJjJEtiGejzN98C7KM5g8ONi9ddSk" />
@@ -17,337 +18,322 @@
 <meta name="google-adsense-account" content="ca-pub-4848025323084395"/>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395" crossorigin="anonymous"></script>
 
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-14JZJ43WTF"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-14JZJ43WTF');
+</script>
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 :root{
-  --bg:#050510;
-  --accent:#ff004c;
+  --bg:#0B0F1A;
+  --card:rgba(255,255,255,0.06);
+  --stroke:rgba(255,255,255,0.12);
   --text:#fff;
-  --muted:#aaa;
+  --muted:#9ca3af;
+  --p1:#7C3AED;
+  --p2:#2563EB;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
 
 body{
-  background:var(--bg);
+  background: radial-gradient(circle at top,#111827,#0B0F1A);
   color:var(--text);
-  font-family:Arial;
-  overflow:hidden;
-}
-
-/* ===== STAR LAYERS ===== */
-.layer{
-  position:fixed;
-  inset:0;
-  background-repeat:repeat;
-  z-index:-3;
-  background-image:radial-gradient(white 1px,transparent 1px);
-  background-size:3px 3px;
-}
-
-#layer1{opacity:.8;animation:move1 60s linear infinite;}
-#layer2{opacity:.5;animation:move2 120s linear infinite;}
-#layer3{opacity:.3;animation:move3 180s linear infinite;}
-
-@keyframes move1{from{transform:translateY(0)}to{transform:translateY(-1000px)}}
-@keyframes move2{from{transform:translateY(0)}to{transform:translateY(-2000px)}}
-@keyframes move3{from{transform:translateY(0)}to{transform:translateY(-3000px)}}
-
-/* glow */
-body::before{
-  content:"";
-  position:fixed;
-  width:600px;height:600px;
-  background:radial-gradient(circle,rgba(255,0,80,.25),transparent);
-  top:-200px;left:-200px;
-  filter:blur(120px);
-  z-index:-2;
+  min-height:100vh;
 }
 
 /* HEADER */
 header{
-  display:flex;
-  padding:10px;
-  gap:10px;
-  background:rgba(0,0,0,.4);
-  backdrop-filter:blur(20px);
+  padding:20px;
+  text-align:center;
+  font-weight:700;
+  font-size:22px;
+  background:linear-gradient(90deg,var(--p1),var(--p2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
-header input{
+/* SEARCH */
+.search-box{
+  display:flex;
+  gap:10px;
+  padding:15px;
+}
+
+.search-box input{
   flex:1;
   padding:12px;
-  border-radius:10px;
-  border:none;
-  outline:none;
-  background:rgba(255,255,255,.1);
-  color:white;
-}
-
-header button{
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  background:var(--accent);
-  color:white;
-}
-
-/* MAIN */
-main{
-  display:grid;
-  grid-template-columns:1fr 300px;
-  height:calc(100vh - 60px);
-}
-
-.left{overflow:auto;padding:10px;}
-.right{overflow:auto;background:rgba(255,255,255,.03);}
-
-/* PLAYER */
-#player{
-  width:100%;
-  height:320px;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 0 40px rgba(255,0,80,.3);
-}
-
-/* RESULTS */
-.result{
-  display:flex;
-  gap:10px;
-  margin-top:10px;
-  padding:10px;
-  background:rgba(255,255,255,.05);
   border-radius:12px;
+  border:1px solid var(--stroke);
+  background:var(--card);
+  color:#fff;
+  outline:none;
 }
 
-.result img{width:140px;border-radius:10px;}
-
-.result button{
-  margin-top:5px;
-  padding:6px 10px;
+.search-box button{
+  padding:12px 16px;
   border:none;
-  border-radius:8px;
-  background:var(--accent);
-  color:white;
-}
-
-/* PLAYLIST */
-.playlist-item{
-  padding:10px;
-  margin:8px;
-  background:rgba(255,255,255,.06);
-  border-radius:10px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--p1),var(--p2));
+  color:#fff;
   cursor:pointer;
 }
 
-/* MINI PLAYER */
-#mini{
+/* SECTION */
+.section{
+  padding:15px;
+}
+
+h2{
+  margin:10px 0;
+  font-size:16px;
+  color:#fff;
+}
+
+/* CARD */
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:16px;
+  padding:12px;
+  margin-bottom:12px;
+  backdrop-filter:blur(12px);
+}
+
+/* VIDEO */
+iframe{
+  width:100%;
+  height:200px;
+  border-radius:12px;
+  border:none;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:8px;
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:12px;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+}
+
+/* TRENDING */
+.trending{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+}
+
+.badge{
+  padding:8px 12px;
+  border-radius:20px;
+  background:var(--card);
+  border:1px solid var(--stroke);
+  white-space:nowrap;
+  font-size:12px;
+}
+
+/* HISTORY */
+.history-item{
+  font-size:12px;
+  padding:8px;
+  border-bottom:1px solid var(--stroke);
+  cursor:pointer;
+}
+
+/* BOTTOM NAV */
+.nav{
   position:fixed;
   bottom:0;
   left:0;
   right:0;
-  height:80px;
-  background:rgba(0,0,0,.6);
-  backdrop-filter:blur(20px);
   display:flex;
-  justify-content:space-between;
-  align-items:center;
+  justify-content:space-around;
   padding:10px;
-  border-top:1px solid rgba(255,255,255,.1);
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  border-top:1px solid var(--stroke);
 }
 
-.controls button{
-  background:none;
-  border:none;
-  color:white;
-  font-size:18px;
-  margin:0 5px;
+.nav div{
+  font-size:12px;
+  color:var(--muted);
 }
 
-/* VISUALIZER */
-#viz{
-  position:absolute;
-  bottom:90px;
-  left:10px;
-  right:10px;
-  height:40px;
-  display:flex;
-  gap:2px;
+/* LOADING */
+.skeleton{
+  height:200px;
+  background:linear-gradient(90deg,#1f2937,#374151,#1f2937);
+  background-size:200% 100%;
+  animation:shimmer 1.5s infinite;
+  border-radius:12px;
 }
 
-.bar{
-  flex:1;
-  background:var(--accent);
-  height:10px;
-  animation:beat .8s infinite ease-in-out;
+@keyframes shimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
 }
-
-@keyframes beat{
-  0%,100%{height:5px;opacity:.3}
-  50%{height:40px;opacity:1}
+#eq{
+  width:100%;
+  height:120px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid var(--stroke);
+  border-radius:12px;
+  backdrop-filter:blur(10px);
 }
 </style>
 </head>
 
 <body>
 
-<div id="layer1" class="layer"></div>
-<div id="layer2" class="layer"></div>
-<div id="layer3" class="layer"></div>
+<header>🎵 RumusMusic</header>
 
-<header>
-<input id="q" placeholder="Cari musik..." oninput="liveSearch()">
-<button onclick="search()">Cari</button>
-</header>
+<!-- SEARCH -->
+<div class="search-box">
+<input id="search" placeholder="Cari lagu / video...">
+<button onclick="searchVideo()">Cari</button>
+</div>
 
-<main>
-<div class="left">
-<div id="player"></div>
+<!-- TRENDING -->
+<div class="section">
+<h2>🔥 Trending</h2>
+<div class="trending">
+<div class="badge">Top Indonesia</div>
+<div class="badge">Global Hits</div>
+<div class="badge">Viral TikTok</div>
+<div class="badge">Remix</div>
+<div class="badge">Pop</div>
+</div>
+</div>
+
+<!-- RESULTS -->
+<div class="section">
+<h2>🎧 Hasil</h2>
+<!-- EQUALIZER -->
+<div class="section">
+  <h2>🎚️ Live Equalizer</h2>
+  <canvas id="eq" width="600" height="120"></canvas>
+</div>
 <div id="results"></div>
 </div>
 
-<div class="right">
-<h3 style="padding:10px;">Playlist</h3>
-<div id="playlist"></div>
-</div>
-</main>
-
-<div id="mini">
-<div id="now">No song</div>
-
-<div class="controls">
-<button onclick="prev()">⏮</button>
-<button onclick="toggle()">⏯</button>
-<button onclick="next()">⏭</button>
-<button onclick="shuffle()">🔀</button>
-<button onclick="repeat()">🔁</button>
-</div>
+<!-- HISTORY -->
+<div class="section">
+<h2>🕘 Riwayat</h2>
+<div id="history"></div>
 </div>
 
-<div id="viz"></div>
+<!-- ADSENSE -->
+<div class="section">
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-4848025323084395"
+data-ad-slot="9841106664"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
 
-<script src="https://www.youtube.com/iframe_api"></script>
+<!-- BOTTOM NAV -->
+<div class="nav">
+<div>Home</div>
+<div>Trending</div>
+<div>History</div>
+<div>Profile</div>
+</div>
 
 <script>
-const API_KEY="AIzaSyDf-TCgD54NNSlg_PbqeJyhXWhn0B4WBzw";
+const API_KEY = "AIzaSyBxBsXHbC2hu6qRO6NBOcZTvLcoxxChWvA";
 
-let player;
-let list=[];
-let i=0;
-let sh=false;
-let rep=false;
+function searchVideo(){
+const q = document.getElementById("search").value;
+if(!q) return;
 
-/* INIT */
-function onYouTubeIframeAPIReady(){
-player=new YT.Player("player",{
-height:"320",
-width:"100%",
-videoId:"dQw4w9WgXcQ",
-events:{
-onStateChange:e=>{
-if(e.data===0) next();
-}
-}
+saveHistory(q);
+
+document.getElementById("results").innerHTML =
+'<div class="skeleton"></div>';
+
+fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=10&q=${q}&key=${API_KEY}`)
+.then(res=>res.json())
+.then(data=>{
+let html = "";
+
+data.items.forEach(v=>{
+html += `
+<div class="card">
+<h3 style="font-size:14px;margin-bottom:8px;">${v.snippet.title}</h3>
+
+<iframe src="https://www.youtube.com/embed/${v.id.videoId}" allowfullscreen></iframe>
+
+<a class="btn" href="https://www.youtube.com/watch?v=${v.id.videoId}" target="_blank">
+Buka YouTube
+</a>
+</div>`;
+});
+
+document.getElementById("results").innerHTML = html;
 });
 }
 
-/* PLAY */
-function play(x){
-i=x;
-let v=list[i];
-if(!v)return;
-player.loadVideoById(v.id);
-document.getElementById("now").innerText=v.title;
+/* HISTORY */
+function saveHistory(q){
+let data = JSON.parse(localStorage.getItem("history")||"[]");
+data.unshift(q);
+data = [...new Set(data)].slice(0,5);
+localStorage.setItem("history", JSON.stringify(data));
+renderHistory();
 }
 
-/* NEXT */
-function next(){
-if(sh){
-i=Math.floor(Math.random()*list.length);
-}else{
-i++;
-if(i>=list.length){
-if(rep)i=0;
-else return;
-}
-}
-play(i);
+function renderHistory(){
+let data = JSON.parse(localStorage.getItem("history")||"[]");
+document.getElementById("history").innerHTML =
+data.map(d=>`<div class="history-item" onclick="document.getElementById('search').value='${d}'">${d}</div>`).join("");
 }
 
-/* PREV */
-function prev(){
-i--;
-if(i<0)i=0;
-play(i);
+renderHistory();
+
+const canvas = document.getElementById("eq");
+const ctx = canvas.getContext("2d");
+
+let bars = 60;
+let data = new Array(bars).fill(0);
+
+function drawEQ(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  let w = canvas.width / bars;
+
+  for(let i=0;i<bars;i++){
+    // animasi smooth random + wave
+    data[i] += (Math.random()*100 - data[i]) * 0.2;
+
+    let h = data[i];
+
+    let gradient = ctx.createLinearGradient(0,0,0,120);
+    gradient.addColorStop(0,"#7C3AED");
+    gradient.addColorStop(1,"#2563EB");
+
+    ctx.fillStyle = gradient;
+    ctx.fillRect(i*w, 120 - h, w-2, h);
+  }
+
+  requestAnimationFrame(drawEQ);
 }
 
-function toggle(){
-player.getPlayerState()==1?player.pauseVideo():player.playVideo();
-}
-
-function shuffle(){sh=!sh;}
-function repeat(){rep=!rep;}
-
-/* SEARCH */
-async function search(){
-let q=document.getElementById("q").value;
-let r=await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${q}&key=${API_KEY}`);
-let d=await r.json();
-
-let box=document.getElementById("results");
-box.innerHTML="";
-
-d.items.forEach(v=>{
-let id=v.id.videoId;
-
-let div=document.createElement("div");
-div.className="result";
-
-div.innerHTML=`
-<img src="${v.snippet.thumbnails.medium.url}">
-<div>
-<h4>${v.snippet.title}</h4>
-<button onclick="add('${id}','${v.snippet.title}')">+</button>
-</div>
-`;
-
-box.appendChild(div);
-});
-}
-
-/* LIVE SEARCH */
-let t;
-function liveSearch(){
-clearTimeout(t);
-t=setTimeout(search,500);
-}
-
-/* ADD */
-function add(id,title){
-list.push({id,title});
-render();
-}
-
-/* RENDER */
-function render(){
-let box=document.getElementById("playlist");
-box.innerHTML="";
-list.forEach((v,x)=>{
-let div=document.createElement("div");
-div.className="playlist-item";
-div.innerText=v.title;
-div.onclick=()=>play(x);
-box.appendChild(div);
-});
-}
-
-/* VISUALIZER SIMULASI */
-let viz=document.getElementById("viz");
-for(let i=0;i<20;i++){
-let b=document.createElement("div");
-b.className="bar";
-b.style.animationDelay=(i*0.05)+"s";
-viz.appendChild(b);
-}
+drawEQ();
 </script>
 
 </body>
