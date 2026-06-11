@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YT Music Pro Ultra</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4257586289753883"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-4257586289753883">
+<meta name="theme-color" content="#0B0F1A"/>
+<meta name="description" content="RumusMusic Youtube Music Pro Ultra- Cari musik, trending video, dan playlist favorit dengan cepat"/>
+
+<!-- Google Verification -->
+<meta name="google-site-verification" content="c5Cc9r8Eyp-IXdjJjJEtiGejzN98C7KM5g8ONi9ddSk" />
+
+<!-- Adsense -->
+<meta name="google-adsense-account" content="ca-pub-4848025323084395"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395" crossorigin="anonymous"></script>
+
+<style>
+:root{
+  --bg:#050510;
+  --accent:#ff004c;
+  --text:#fff;
+  --muted:#aaa;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Arial;
+  overflow:hidden;
+}
+
+/* ===== STAR LAYERS ===== */
+.layer{
+  position:fixed;
+  inset:0;
+  background-repeat:repeat;
+  z-index:-3;
+  background-image:radial-gradient(white 1px,transparent 1px);
+  background-size:3px 3px;
+}
+
+#layer1{opacity:.8;animation:move1 60s linear infinite;}
+#layer2{opacity:.5;animation:move2 120s linear infinite;}
+#layer3{opacity:.3;animation:move3 180s linear infinite;}
+
+@keyframes move1{from{transform:translateY(0)}to{transform:translateY(-1000px)}}
+@keyframes move2{from{transform:translateY(0)}to{transform:translateY(-2000px)}}
+@keyframes move3{from{transform:translateY(0)}to{transform:translateY(-3000px)}}
+
+/* glow */
+body::before{
+  content:"";
+  position:fixed;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,0,80,.25),transparent);
+  top:-200px;left:-200px;
+  filter:blur(120px);
+  z-index:-2;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  padding:10px;
+  gap:10px;
+  background:rgba(0,0,0,.4);
+  backdrop-filter:blur(20px);
+}
+
+header input{
+  flex:1;
+  padding:12px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  background:rgba(255,255,255,.1);
+  color:white;
+}
+
+header button{
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  background:var(--accent);
+  color:white;
+}
+
+/* MAIN */
+main{
+  display:grid;
+  grid-template-columns:1fr 300px;
+  height:calc(100vh - 60px);
+}
+
+.left{overflow:auto;padding:10px;}
+.right{overflow:auto;background:rgba(255,255,255,.03);}
+
+/* PLAYER */
+#player{
+  width:100%;
+  height:320px;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 0 40px rgba(255,0,80,.3);
+}
+
+/* RESULTS */
+.result{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+  padding:10px;
+  background:rgba(255,255,255,.05);
+  border-radius:12px;
+}
+
+.result img{width:140px;border-radius:10px;}
+
+.result button{
+  margin-top:5px;
+  padding:6px 10px;
+  border:none;
+  border-radius:8px;
+  background:var(--accent);
+  color:white;
+}
+
+/* PLAYLIST */
+.playlist-item{
+  padding:10px;
+  margin:8px;
+  background:rgba(255,255,255,.06);
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* MINI PLAYER */
+#mini{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:80px;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(20px);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px;
+  border-top:1px solid rgba(255,255,255,.1);
+}
+
+.controls button{
+  background:none;
+  border:none;
+  color:white;
+  font-size:18px;
+  margin:0 5px;
+}
+
+/* VISUALIZER */
+#viz{
+  position:absolute;
+  bottom:90px;
+  left:10px;
+  right:10px;
+  height:40px;
+  display:flex;
+  gap:2px;
+}
+
+.bar{
+  flex:1;
+  background:var(--accent);
+  height:10px;
+  animation:beat .8s infinite ease-in-out;
+}
+
+@keyframes beat{
+  0%,100%{height:5px;opacity:.3}
+  50%{height:40px;opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<div id="layer1" class="layer"></div>
+<div id="layer2" class="layer"></div>
+<div id="layer3" class="layer"></div>
+
+<header>
+<input id="q" placeholder="Cari musik..." oninput="liveSearch()">
+<button onclick="search()">Cari</button>
+</header>
+
+<main>
+<div class="left">
+<div id="player"></div>
+<div id="results"></div>
+</div>
+
+<div class="right">
+<h3 style="padding:10px;">Playlist</h3>
+<div id="playlist"></div>
+</div>
+</main>
+
+<div id="mini">
+<div id="now">No song</div>
+
+<div class="controls">
+<button onclick="prev()">⏮</button>
+<button onclick="toggle()">⏯</button>
+<button onclick="next()">⏭</button>
+<button onclick="shuffle()">🔀</button>
+<button onclick="repeat()">🔁</button>
+</div>
+</div>
+
+<div id="viz"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+const API_KEY="AIzaSyDf-TCgD54NNSlg_PbqeJyhXWhn0B4WBzw";
+
+let player;
+let list=[];
+let i=0;
+let sh=false;
+let rep=false;
+
+/* INIT */
+function onYouTubeIframeAPIReady(){
+player=new YT.Player("player",{
+height:"320",
+width:"100%",
+videoId:"dQw4w9WgXcQ",
+events:{
+onStateChange:e=>{
+if(e.data===0) next();
+}
+}
+});
+}
+
+/* PLAY */
+function play(x){
+i=x;
+let v=list[i];
+if(!v)return;
+player.loadVideoById(v.id);
+document.getElementById("now").innerText=v.title;
+}
+
+/* NEXT */
+function next(){
+if(sh){
+i=Math.floor(Math.random()*list.length);
+}else{
+i++;
+if(i>=list.length){
+if(rep)i=0;
+else return;
+}
+}
+play(i);
+}
+
+/* PREV */
+function prev(){
+i--;
+if(i<0)i=0;
+play(i);
+}
+
+function toggle(){
+player.getPlayerState()==1?player.pauseVideo():player.playVideo();
+}
+
+function shuffle(){sh=!sh;}
+function repeat(){rep=!rep;}
+
+/* SEARCH */
+async function search(){
+let q=document.getElementById("q").value;
+let r=await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${q}&key=${API_KEY}`);
+let d=await r.json();
+
+let box=document.getElementById("results");
+box.innerHTML="";
+
+d.items.forEach(v=>{
+let id=v.id.videoId;
+
+let div=document.createElement("div");
+div.className="result";
+
+div.innerHTML=`
+<img src="${v.snippet.thumbnails.medium.url}">
+<div>
+<h4>${v.snippet.title}</h4>
+<button onclick="add('${id}','${v.snippet.title}')">+</button>
+</div>
+`;
+
+box.appendChild(div);
+});
+}
+
+/* LIVE SEARCH */
+let t;
+function liveSearch(){
+clearTimeout(t);
+t=setTimeout(search,500);
+}
+
+/* ADD */
+function add(id,title){
+list.push({id,title});
+render();
+}
+
+/* RENDER */
+function render(){
+let box=document.getElementById("playlist");
+box.innerHTML="";
+list.forEach((v,x)=>{
+let div=document.createElement("div");
+div.className="playlist-item";
+div.innerText=v.title;
+div.onclick=()=>play(x);
+box.appendChild(div);
+});
+}
+
+/* VISUALIZER SIMULASI */
+let viz=document.getElementById("viz");
+for(let i=0;i<20;i++){
+let b=document.createElement("div");
+b.className="bar";
+b.style.animationDelay=(i*0.05)+"s";
+viz.appendChild(b);
+}
+</script>
+
+</body>
+</html>
