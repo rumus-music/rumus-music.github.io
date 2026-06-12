@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Rasi Bintang - Cosmic Edition</title>
+    <meta name="google-site-verification" content="c5Cc9r8Eyp-IXdjJjJEtiGejzN98C7KM5g8ONi9ddSk" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395"
+    crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-4848025323084395">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14JZJ43WTF"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    
+    gtag('config', 'G-14JZJ43WTF');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395"
+    crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #020208;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        #starfield {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .content-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #ffedd5, #38bdf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .hero-section p {
+            color: #64748b;
+            font-size: 1.2rem;
+        }
+
+        .info-section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 600px;
+            line-height: 1.8;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .card h2 {
+            color: #fbbf24;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="starfield"></canvas>
+
+    <div class="content-container">
+        <section class="hero-section">
+            <h1>Siklus Kosmik</h1>
+            <p>Matahari dan Bulan berputar mengitari rasi bintang</p>
+        </section>
+
+        <section class="info-section">
+            <div class="card">
+                <h2>Interaksi Sun & Moon</h2>
+                <p>Matahari dan Bulan diposisikan secara matematis menggunakan sudut kosinus dan sinus yang berlawanan (berjarak 180°). Efek <i>glow</i> cahaya luar digambar langsung menggunakan fitur <code>shadowBlur</code> pada HTML5 Canvas.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('starfield');
+        const ctx = canvas.getContext('2d');
+
+        let stars = [];
+        const numStars = 80; 
+        const connectionDistance = 130; 
+
+        let mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+        let scrollY = 0;
+        
+        let rotationAngle = 0;
+        
+        // Pengaturan Kecepatan (Tetap Cepat)
+        const rotationSpeed = 0.005;   
+        const driftSpeed = 1.0;         
+
+        // Struktur Data untuk Sun dan Moon
+        let sun = { radiusOrbit: 0, size: 40, parallaxFactor: 0.15 };
+        let moon = { radiusOrbit: 0, size: 30, parallaxFactor: 0.15 };
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            // Tentukan jarak orbit Sun & Moon berdasarkan ukuran layar terpendek
+            const shortestSide = Math.min(canvas.width, canvas.height);
+            sun.radiusOrbit = shortestSide * 0.35;
+            moon.radiusOrbit = shortestSide * 0.35;
+
+            initStars();
+        }
+
+        function initStars() {
+            stars = [];
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const maxRadius = Math.max(canvas.width, canvas.height) * 0.9;
+
+            for (let i = 0; i < numStars; i++) {
+                let angle = Math.random() * Math.PI * 2;
+                let radius = Math.random() * maxRadius;
+
+                stars.push({
+                    baseX: centerX + Math.cos(angle) * radius,
+                    baseY: centerY + Math.sin(angle) * radius,
+                    size: Math.random() * 2.5 + 0.5,
+                    parallaxFactor: Math.random() * 0.5 + 0.2,
+                    vx: (Math.random() - 0.5) * driftSpeed,
+                    vy: (Math.random() - 0.5) * driftSpeed
+                });
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            mouse.x += (mouse.targetX - mouse.x) * 0.08;
+            mouse.y += (mouse.targetY - mouse.y) * 0.08;
+
+            rotationAngle += rotationSpeed;
+
+            // --- 1. GAMBAR MATAHARI (SUN) ---
+            // Sun dipasang pada sudut rotasi normal
+            let sunX = centerX + Math.cos(rotationAngle) * sun.radiusOrbit + (mouse.x * sun.parallaxFactor);
+            let sunY = centerY + Math.sin(rotationAngle) * sun.radiusOrbit + ((mouse.y + scrollY) * sun.parallaxFactor);
+            
+            ctx.save();
+            ctx.shadowBlur = 40;
+            ctx.shadowColor = "rgba(251, 191, 36, 0.8)"; // Glow Oranye/Kuning
+            ctx.beginPath();
+            ctx.arc(sunX, sunY, sun.size, 0, Math.PI * 2);
+            ctx.fillStyle = "#fbbf24";
+            ctx.fill();
+            ctx.restore();
+
+            // --- 2. GAMBAR BULAN (MOON) ---
+            // Moon dipasang pada sudut rotasi + PI (180 derajat di seberang Sun)
+            let moonX = centerX + Math.cos(rotationAngle + Math.PI) * moon.radiusOrbit + (mouse.x * moon.parallaxFactor);
+            let moonY = centerY + Math.sin(rotationAngle + Math.PI) * moon.radiusOrbit + ((mouse.y + scrollY) * moon.parallaxFactor);
+            
+            ctx.save();
+            ctx.shadowBlur = 30;
+            ctx.shadowColor = "rgba(224, 242, 254, 0.6)"; // Glow Biru Muda/Putih
+            ctx.beginPath();
+            ctx.arc(moonX, moonY, moon.size, 0, Math.PI * 2);
+            ctx.fillStyle = "#e0f2fe";
+            ctx.fill();
+            ctx.restore();
+
+            // --- 3. UPDATE & GAMBAR BINTANG ---
+            stars.forEach(star => {
+                star.baseX += star.vx;
+                star.baseY += star.vy;
+
+                let relX = star.baseX - centerX;
+                let relY = star.baseY - centerY;
+
+                let rotatedX = relX * Math.cos(rotationAngle) - relY * Math.sin(rotationAngle);
+                let rotatedY = relX * Math.sin(rotationAngle) + relY * Math.cos(rotationAngle);
+
+                let posX = rotatedX + centerX;
+                let posY = rotatedY + centerY;
+
+                let finalX = posX + (mouse.x * star.parallaxFactor);
+                let finalY = posY + ((mouse.y + scrollY) * star.parallaxFactor);
+
+                let maxDist = Math.max(canvas.width, canvas.height) * 1.0;
+                let distFromCenter = Math.sqrt(rotatedX*rotatedX + rotatedY*rotatedY);
+                if (distFromCenter > maxDist) {
+                    let freshAngle = Math.random() * Math.PI * 2;
+                    star.baseX = centerX + Math.cos(freshAngle) * (maxDist * 0.2);
+                    star.baseY = centerY + Math.sin(freshAngle) * (maxDist * 0.2);
+                }
+
+                ctx.beginPath();
+                ctx.arc(finalX, finalY, star.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(186, 230, 253, ${star.parallaxFactor + 0.3})`;
+                ctx.fill();
+
+                star.currentRenderX = finalX;
+                star.currentRenderY = finalY;
+            });
+
+            // --- 4. HUBUNGKAN GARIS RASI ---
+            for (let i = 0; i < stars.length; i++) {
+                for (let j = i + 1; j < stars.length; j++) {
+                    let dx = stars[i].currentRenderX - stars[j].currentRenderX;
+                    let dy = stars[i].currentRenderY - stars[j].currentRenderY;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < connectionDistance) {
+                        let alpha = (1 - distance / connectionDistance) * 0.2;
+                        ctx.beginPath();
+                        ctx.moveTo(stars[i].currentRenderX, stars[i].currentRenderY);
+                        ctx.lineTo(stars[j].currentRenderX, stars[j].currentRenderY);
+                        ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+                        ctx.lineWidth = 0.7;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.targetX = e.clientX - window.innerWidth / 2;
+            mouse.targetY = e.clientY - window.innerHeight / 2;
+        });
+
+        window.addEventListener('scroll', () => {
+            scrollY = window.scrollY;
+        });
+
+        window.addEventListener('resize', resizeCanvas);
+
+        resizeCanvas();
+        animate();
+        
+    </script>
+</body>
+</html>
