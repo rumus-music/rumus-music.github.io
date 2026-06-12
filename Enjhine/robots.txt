@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /search
+
+Sitemap: https://enjhine.blogspot.com/atom.xml
+Sitemap: https://enjhine.blogspot.com/rss.xml
+Sitemap: https://enjhine.blogspot.com/sitemap.xml
+Sitemap: https://enjhine.blogspot.com/sitemap-pages.xml
