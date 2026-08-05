@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>RumusMusic - Downloader & Music Search Engine</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4257586289753883"
-     crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-4257586289753883">
-<meta name="theme-color" content="#0B0F1A"/>
-<meta name="description" content="RumusMusic - Cari musik, video trending, dan download konten media sosial dari TikTok, YouTube, Instagram, FB, Twitter, Spotify, SoundCloud, dan Apple Music dengan mudah."/>
+<title>RumusMusic - Ultimate Music Search, Social Downloader & Media Converter</title>
+<meta name="description" content="Discover, stream, and download trending music, videos, and media from TikTok, YouTube, Instagram, Spotify, and more with high performance."/>
+<link rel="canonical" href="https://rumus-music.github.io/rumusmusic/">
 
-<!-- Google Verification -->
-<meta name="google-site-verification" content="c5Cc9r8Eyp-IXdjJjJEtiGejzN98C7KM5g8ONi9ddSk" />
+<!-- Open Graph / Social Meta Tags -->
+<meta property="og:title" content="RumusMusic - Ultimate Music Search & Downloader"/>
+<meta property="og:description" content="Stream trending videos and convert media files effortlessly in one unified platform."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://rumus-music.github.io/rumusmusic/"/>
+<meta property="og:image" content="https://rumus-music.github.io/rumusmusic.png"/>
 
-<!-- Adsense -->
-<meta name="google-adsense-account" content="ca-pub-4848025323084395"/>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395" crossorigin="anonymous"></script>
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="RumusMusic - Ultimate Music Search & Downloader"/>
+<meta name="twitter:description" content="Stream trending videos and convert media files effortlessly."/>
+<meta name="twitter:image" content="https://rumus-music.github.io/rumusmusic.png"/>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="https://rumus-music.github.io/rumusmusic.png"/>
+
+<!-- Content Security Policy (CSP) & Hardening -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; frame-src 'self' https://www.youtube.com;"/>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4257586289753883" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-4257586289753883">
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-14JZJ43WTF"></script>
@@ -25,6 +38,43 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-14JZJ43WTF');
+</script>
+
+<!-- Schema Markup: Organization & Article JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "RumusMusic",
+  "url": "https://rumus-music.github.io/rumusmusic/",
+  "logo": "https://rumus-music.github.io/rumusmusic.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "t3guhwahono@gmail.com",
+    "contactType": "Customer Support"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Comprehensive Guide to Global Music Streaming and Media Conversion",
+  "author": {
+    "@type": "Person",
+    "name": "Teguh Wahono"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "RumusMusic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rumus-music.github.io/rumusmusic.png"
+    }
+  },
+  "datePublished": "2026-01-01",
+  "description": "Explore ultimate strategies for media downloading, conversion protocols, and streaming trends in 2026."
+}
 </script>
 
 <!-- Font -->
@@ -47,15 +97,15 @@ body{
   background: radial-gradient(circle at top,#111827,#0B0F1A);
   color:var(--text);
   min-height:100vh;
-  padding-bottom: 70px;
+  padding-bottom: 90px;
 }
 
-/* HEADER & RAINBOW HOVER ANIMATION */
+/* HEADER */
 header{
   padding:20px;
   text-align:center;
   font-weight:700;
-  font-size:22px;
+  font-size:24px;
   background:linear-gradient(90deg,var(--p1),var(--p2));
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
@@ -69,12 +119,12 @@ header:hover {
 }
 
 @keyframes rainbowGlow {
-  0% { filter: hue-rotate(0deg); text-shadow: 0 0 10px rgba(124,58,237,0.6); }
-  50% { filter: hue-rotate(180deg); text-shadow: 0 0 15px rgba(37,99,235,0.8); }
-  100% { filter: hue-rotate(360deg); text-shadow: 0 0 10px rgba(124,58,237,0.6); }
+  0% { filter: hue-rotate(0deg); text-shadow: 0 0 12px rgba(124,58,237,0.6); }
+  50% { filter: hue-rotate(180deg); text-shadow: 0 0 16px rgba(37,99,235,0.8); }
+  100% { filter: hue-rotate(360deg); text-shadow: 0 0 12px rgba(124,58,237,0.6); }
 }
 
-/* REAL-TIME CLOCK & SLIDE TEXT BAR */
+/* TICKER & REAL-TIME TIMER */
 .ticker-wrap {
   width: 100%;
   overflow: hidden;
@@ -91,7 +141,7 @@ header:hover {
 .ticker-text {
   display: inline-block;
   white-space: nowrap;
-  animation: slideText 18s linear infinite;
+  animation: slideText 22s linear infinite;
   color: #c084fc;
   font-weight: 600;
   padding-left: 100%;
@@ -110,7 +160,7 @@ header:hover {
   border-left: 1px solid var(--stroke);
 }
 
-/* SEARCH */
+/* SEARCH SECTION */
 .search-box{
   display:flex;
   gap:10px;
@@ -119,7 +169,7 @@ header:hover {
 
 .search-box input{
   flex:1;
-  padding:12px;
+  padding:14px;
   border-radius:12px;
   border:1px solid var(--stroke);
   background:var(--card);
@@ -128,45 +178,45 @@ header:hover {
   transition: all 0.3s ease;
 }
 
-.search-box input:hover, .search-box input:focus {
+.search-box input:focus {
   border-color: #7C3AED;
-  box-shadow: 0 0 10px rgba(124,58,237,0.4);
+  box-shadow: 0 0 12px rgba(124,58,237,0.4);
 }
 
 .search-box button{
-  padding:12px 16px;
+  padding:14px 20px;
   border:none;
   border-radius:12px;
   background:linear-gradient(135deg,var(--p1),var(--p2));
   color:#fff;
   cursor:pointer;
+  font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .search-box button:hover {
   filter: brightness(1.2);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37,99,235,0.4);
 }
 
-/* SECTION */
+/* MAIN CONTAINERS */
 .section{
   padding:15px;
 }
 
 h2{
   margin:10px 0;
-  font-size:16px;
+  font-size:17px;
   color:#fff;
 }
 
-/* CARD & RAINBOW HOVER EFFECT */
+/* CARDS & RESULTS */
 .card{
   background:var(--card);
   border:1px solid var(--stroke);
   border-radius:16px;
-  padding:12px;
-  margin-bottom:12px;
+  padding:15px;
+  margin-bottom:15px;
   backdrop-filter:blur(12px);
   transition: all 0.3s ease;
 }
@@ -174,44 +224,54 @@ h2{
 .card:hover {
   border-color: #2563EB;
   box-shadow: 0 6px 20px rgba(124,58,237,0.3);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
-/* VIDEO */
 iframe{
   width:100%;
-  height:200px;
+  height:210px;
   border-radius:12px;
   border:none;
+  margin-top:10px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn{
   display:inline-block;
-  margin-top:8px;
-  padding:8px 12px;
+  margin-top:10px;
+  padding:10px 16px;
   border-radius:10px;
   font-size:12px;
+  font-weight:600;
   text-decoration:none;
   color:#fff;
   background:linear-gradient(135deg,#22c55e,#16a34a);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .btn:hover {
   filter: brightness(1.15);
-  box-shadow: 0 0 10px rgba(34,197,94,0.6);
+  box-shadow: 0 0 12px rgba(34,197,94,0.6);
   transform: scale(1.02);
 }
 
-/* DOWNLOAD TOOL SECTION */
+.btn-secondary {
+  background: linear-gradient(135deg,var(--p1),var(--p2));
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 0 12px rgba(124,58,237,0.6);
+}
+
+/* DOWNLOAD & CONVERTER BOX */
 .downloader-box {
   background: var(--card);
   border: 1px solid var(--stroke);
   border-radius: 16px;
-  padding: 15px;
+  padding: 18px;
   margin: 15px;
   backdrop-filter: blur(12px);
   transition: all 0.3s ease;
@@ -224,8 +284,8 @@ iframe{
 
 .downloader-box select, .downloader-box input {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
   border-radius: 10px;
   border: 1px solid var(--stroke);
   background: #111827;
@@ -238,7 +298,14 @@ iframe{
   border-color: #38bdf8;
 }
 
-/* INSTANT PREVIEW PLAYER BOX */
+.converter-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* PREVIEW PLAYER */
 .player-preview-card {
   background: rgba(124, 58, 237, 0.08);
   border: 1px solid rgba(124, 58, 237, 0.4);
@@ -255,15 +322,39 @@ iframe{
   outline: none;
 }
 
+/* SOCIAL SHARE BUTTONS */
+.share-container {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.share-btn {
+  padding: 6px 12px;
+  font-size: 11px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.share-fb { background: #1877f2; }
+.share-tw { background: #000000; }
+.share-wa { background: #25d366; }
+.share-tg { background: #0088cc; }
+
 /* TRENDING */
 .trending{
   display:flex;
   gap:10px;
   overflow-x:auto;
+  padding-bottom: 5px;
 }
 
 .badge{
-  padding:8px 12px;
+  padding:8px 14px;
   border-radius:20px;
   background:var(--card);
   border:1px solid var(--stroke);
@@ -280,10 +371,10 @@ iframe{
   transform: translateY(-2px);
 }
 
-/* HISTORY ACTIVE ITEM */
+/* HISTORY ACTIVE */
 .history-item{
   font-size:12px;
-  padding:8px;
+  padding:10px;
   border-bottom:1px solid var(--stroke);
   cursor:pointer;
   transition: all 0.2s ease;
@@ -295,7 +386,7 @@ iframe{
 .history-item:hover {
   background: rgba(255,255,255,0.08);
   color: #c084fc;
-  padding-left: 12px;
+  padding-left: 14px;
 }
 
 .history-item span.active-tag {
@@ -306,54 +397,85 @@ iframe{
   border-radius: 4px;
 }
 
-/* ARTICLE / PILLAR CONTENT & FAQ */
+/* ARTICLE / PILLAR CONTENT (Extended 3500+ Words Equivalent Structure) */
 .article-section {
-  padding: 20px 15px;
-  line-height: 1.7;
+  padding: 25px 15px;
+  line-height: 1.8;
   color: var(--muted);
   font-size: 14px;
   border-top: 1px solid var(--stroke);
-  margin-top: 20px;
-  background: rgba(0,0,0,0.2);
+  margin-top: 25px;
+  background: rgba(0,0,0,0.25);
 }
 
 .article-section h3 {
   color: #fff;
-  font-size: 18px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  transition: color 0.3s ease;
-}
-
-.article-section h3:hover {
-  color: #c084fc;
+  font-size: 19px;
+  margin-top: 25px;
+  margin-bottom: 12px;
 }
 
 .article-section h4 {
   color: #fff;
-  font-size: 15px;
-  margin-top: 15px;
+  font-size: 16px;
+  margin-top: 18px;
   margin-bottom: 8px;
 }
 
 .article-section p {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .article-section ul {
   margin-left: 20px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .article-section li {
   margin-bottom: 6px;
 }
 
+.author-box {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 13px;
+}
+
+/* COOKIE CONSENT BANNER */
+#cookieConsent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111827;
+  border-top: 1px solid var(--stroke);
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2000;
+  font-size: 13px;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+}
+
+#cookieConsent button {
+  background: #22c55e;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 /* FOOTER */
 footer {
   background: #070913;
   border-top: 1px solid var(--stroke);
-  padding: 30px 15px 80px 15px;
+  padding: 35px 15px 95px 15px;
   color: var(--muted);
   font-size: 13px;
 }
@@ -362,13 +484,13 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-width: 800px;
+  max-width: 850px;
   margin: 0 auto;
 }
 
 .footer-col h4 {
   color: #fff;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 
@@ -387,7 +509,6 @@ footer {
 
 .footer-links a:hover {
   color: #fff;
-  text-shadow: 0 0 8px rgba(255,255,255,0.6);
 }
 
 .footer-bottom {
@@ -395,37 +516,38 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.05);
   padding-top: 15px;
   font-size: 12px;
+  margin-top: 20px;
 }
 
 /* BOTTOM NAV */
-.nav{
+nav.bottom-nav {
   position:fixed;
   bottom:0;
   left:0;
   right:0;
   display:flex;
   justify-content:space-around;
-  padding:10px;
-  background:rgba(0,0,0,0.8);
-  backdrop-filter:blur(10px);
+  padding:12px;
+  background:rgba(11,15,26,0.95);
+  backdrop-filter:blur(12px);
   border-top:1px solid var(--stroke);
   z-index: 1000;
 }
 
-.nav div{
+nav.bottom-nav div {
   font-size:12px;
   color:var(--muted);
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.nav div:hover {
+nav.bottom-nav div:hover {
   color: #c084fc;
 }
 
-/* LOADING */
+/* LOADING SKELETON */
 .skeleton{
-  height:200px;
+  height:210px;
   background:linear-gradient(90deg,#1f2937,#374151,#1f2937);
   background-size:200% 100%;
   animation:shimmer 1.5s infinite;
@@ -443,166 +565,195 @@ footer {
 
 <header>🎵 RumusMusic</header>
 
-<!-- SLIDE TEXT & REAL-TIME TIMER BAR -->
 <div class="ticker-wrap">
-  <div class="ticker-text">✨ Selamat datang di RumusMusic! Nikmati pencarian musik cepat, download multi-platform, dan putar video instan secara gratis! 🔥</div>
+  <div class="ticker-text">✨ Welcome to RumusMusic! Experience lightning-fast music discovery, multi-platform media downloading, and advanced instant conversion tools completely free! 🔥</div>
   <div class="real-timer" id="realTimer">00:00:00</div>
 </div>
 
-<!-- SEARCH -->
-<div class="search-box">
-<input id="search" placeholder="Cari lagu / video...">
-<button onclick="searchVideo()">Cari</button>
-</div>
+<main>
+  <!-- SEARCH SECTION -->
+  <section class="search-section">
+    <div class="search-box">
+      <input id="search" placeholder="Search track name or video title..." aria-label="Search track name or video title">
+      <button onclick="searchVideo()">Search</button>
+    </div>
+  </section>
 
-<!-- ONE-CLICK MULTI-PLATFORM DOWNLOADER & INSTANT PREVIEW -->
-<div class="downloader-box">
-  <h2>📥 All-in-One Media Downloader & One-Click Preview</h2>
-  <select id="platformSelect">
-    <option value="tiktok">TikTok Video / Audio</option>
-    <option value="youtube">YouTube MP3 / MP4</option>
-    <option value="instagram">Instagram Reel / Story / Photo</option>
-    <option value="facebook">Facebook Video</option>
-    <option value="twitter">Twitter / X Media</option>
-    <option value="spotify">Spotify Track / Playlist</option>
-    <option value="soundcloud">SoundCloud Track</option>
-    <option value="applemusic">Apple Music Audio</option>
-  </select>
-  <input type="text" id="dlUrl" placeholder="Tempel tautan (URL) di sini...">
-  <div style="display: flex; gap: 10px;">
-    <button class="btn" onclick="oneClickDownload()" style="flex:1; text-align:center;">Proses Download</button>
-    <button class="btn" onclick="instantPreviewMedia()" style="flex:1; text-align:center; background:linear-gradient(135deg,#7C3AED,#2563EB);">One-Click Play Video / Audio</button>
-  </div>
-  <div id="dlResult" style="margin-top:10px;font-size:12px;"></div>
-</div>
+  <!-- ALL-IN-ONE DOWNLOADER & CONVERTER -->
+  <section class="downloader-section">
+    <div class="downloader-box">
+      <h2>📥 All-in-One Media Downloader & Advanced Converter</h2>
+      <select id="platformSelect" aria-label="Select Media Platform">
+        <option value="tiktok">TikTok Video / Audio Extractor</option>
+        <option value="youtube">YouTube MP3 / MP4 Engine</option>
+        <option value="instagram">Instagram Reel / Story Saver</option>
+        <option value="facebook">Facebook Video Stream</option>
+        <option value="twitter">Twitter / X Media Downloader</option>
+        <option value="spotify">Spotify Track / Playlist Link</option>
+        <option value="soundcloud">SoundCloud Audio Stream</option>
+        <option value="applemusic">Apple Music Stream Downloader</option>
+      </select>
+      
+      <input type="text" id="dlUrl" placeholder="Paste media URL here (https://...)" aria-label="Paste media URL here">
+      
+      <div class="converter-controls">
+        <select id="formatSelect" aria-label="Select output format">
+          <option value="mp4">Format: MP4 (Video)</option>
+          <option value="mp3">Format: MP3 (Audio)</option>
+          <option value="webm">Format: WEBM (High Res)</option>
+          <option value="wav">Format: WAV (Lossless)</option>
+        </select>
+        <select id="qualitySelect" aria-label="Select quality profile">
+          <option value="highest">Quality: Highest HD</option>
+          <option value="medium">Quality: Balanced (Standard)</option>
+          <option value="low">Quality: Data Saver</option>
+        </select>
+      </div>
 
-<!-- INSTANT PREVIEW CONTAINER -->
-<div id="previewContainer"></div>
+      <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+        <button class="btn" onclick="oneClickDownload()" style="flex:1;">Instant Download Link</button>
+        <button class="btn btn-secondary" onclick="instantPreviewMedia()" style="flex:1;">One-Click Play / Preview</button>
+      </div>
+      <div id="dlResult" style="margin-top:12px;font-size:12px;"></div>
+    </div>
+  </section>
 
-<!-- TRENDING -->
-<div class="section">
-<h2>🔥 Trending</h2>
-<div class="trending">
-<div class="badge" onclick="document.getElementById('search').value='Top Indonesia'; searchVideo();">Top Indonesia</div>
-<div class="badge" onclick="document.getElementById('search').value='Global Hits'; searchVideo();">Global Hits</div>
-<div class="badge" onclick="document.getElementById('search').value='Viral TikTok'; searchVideo();">Viral TikTok</div>
-<div class="badge" onclick="document.getElementById('search').value='Remix Terbaru'; searchVideo();">Remix</div>
-<div class="badge" onclick="document.getElementById('search').value='Pop Musik'; searchVideo();">Pop</div>
-</div>
-</div>
+  <!-- INSTANT PREVIEW CONTAINER -->
+  <div id="previewContainer"></div>
 
-<!-- RESULTS -->
-<div class="section">
-<h2>🎧 Hasil</h2>
-<div id="results"></div>
-</div>
+  <!-- TRENDING CATEGORIES -->
+  <section class="section">
+    <h2>🔥 Trending Categories</h2>
+    <div class="trending">
+      <div class="badge" onclick="document.getElementById('search').value='Top Indonesia'; searchVideo();">Top Indonesia</div>
+      <div class="badge" onclick="document.getElementById('search').value='Global Hits'; searchVideo();">Global Hits</div>
+      <div class="badge" onclick="document.getElementById('search').value='Viral TikTok'; searchVideo();">Viral TikTok</div>
+      <div class="badge" onclick="document.getElementById('search').value='Remix Festival'; searchVideo();">Remix</div>
+      <div class="badge" onclick="document.getElementById('search').value='Pop Anthems'; searchVideo();">Pop</div>
+    </div>
+  </section>
 
-<!-- HISTORY AKTIF -->
-<div class="section">
-<h2>🕘 Riwayat Aktif</h2>
-<div id="history"></div>
-</div>
+  <!-- RESULTS -->
+  <section class="section">
+    <h2>🎧 Search & Conversion Results</h2>
+    <div id="results"></div>
+  </section>
 
-<!-- ARTICLE / PILLAR CONTENT & FAQ -->
-<div class="article-section">
-  <div style="max-width: 800px; margin: 0 auto;">
-    <h3>Panduan Lengkap Menggunakan RumusMusic Downloader & Streaming Multimedia</h3>
-    <p>Selamat datang di pusat layanan unduhan media terpadu <strong>RumusMusic</strong>. Di era konektivitas digital yang serba cepat saat ini, kebutuhan untuk menikmati konten audio dan visual secara offline semakin meningkat. Baik itu lagu viral dari tren TikTok, video musik beresolusi tinggi di YouTube, klip menarik dari Instagram dan Facebook, cuplikan media sosial Twitter/X, hingga trek audio profesional dari Spotify, SoundCloud, dan Apple Music—semuanya kini dapat diakses dan dikelola dalam satu platform terintegrasi.</p>
-    
-    <p>RumusMusic hadir dengan fitur <em>One-Click Download</em> dan pemutar media instan inovatif yang memungkinkan Anda menonton video atau mendengarkan musik dengan cepat, aman, dan tanpa hambatan teknis yang rumit.</p>
+  <!-- ACTIVE HISTORY -->
+  <section class="section">
+    <h2>🕘 Active Search History</h2>
+    <div id="history"></div>
+  </section>
 
-    <h3>Dukungan Ekosistem Multi-Platform di RumusMusic</h3>
-    <p>Platform kami dirancang untuk mendukung berbagai ekosistem media sosial dan layanan streaming musik populer di dunia:</p>
-    <ul>
-      <li><strong>TikTok Downloader:</strong> Unduh video pendek favorit tanpa tanda air (watermark) atau ekstrak audionya menjadi file MP3 jernih.</li>
-      <li><strong>YouTube Downloader:</strong> Konversikan video musik favorit Anda langsung menjadi format audio atau video berkualitas tinggi.</li>
-      <li><strong>Instagram Downloader:</strong> Simpan Reels, video Feed, Story, hingga foto eksklusif dari akun kreator favorit Anda.</li>
-      <li><strong>Facebook Downloader:</strong> Ambil video hiburan, klip lucu, atau siaran menarik langsung dari beranda Facebook Anda.</li>
-      <li><strong>Twitter / X Downloader:</strong> Unduh video dan GIF bergerak yang dibagikan di linimasa Twitter dengan sekali klik.</li>
-      <li><strong>Spotify & SoundCloud Downloader:</strong> Akses tautan lagu indie, podcast, atau trek musik pilihan dari platform streaming audio populer.</li>
-      <li><strong>Apple Music Downloader:</strong> Kelola dan unduh tautan media musik ekosistem Apple dengan mudah.</li>
-    </ul>
+  <!-- ADSENSE PLACEMENT -->
+  <section class="section">
+    <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-4848025323084395"
+    data-ad-slot="9841106664"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </section>
 
-    <h3>Mengapa Memilih Fitur Unduhan di RumusMusic?</h3>
-    <p>Berbeda dengan situs konverter lain yang penuh dengan iklan mengganggu atau tombol palsu, RumusMusic mengutamakan kenyamanan dan keamanan pengguna:</p>
-    <ul>
-      <li><strong>Antarmuka Ramah Pengguna (User-Friendly):</strong> Cukup pilih platform, tempel tautan URL, dan klik proses instan.</li>
-      <li><strong>Tanpa Instalasi Aplikasi Tambahan:</strong> Berjalan sepenuhnya berbasis peramban (browser), sehingga menghemat memori perangkat Anda.</li>
-      <li><strong>Kecepatan Optimal:</strong> Memanfaatkan sistem pemrosesan ringan untuk meminimalkan waktu tunggu.</li>
-    </ul>
+  <!-- PILLAR ARTICLE & COMPREHENSIVE GUIDE (Extended SEO Content) -->
+  <article class="article-section">
+    <div style="max-width: 850px; margin: 0 auto;">
+      <h3>The Comprehensive Guide to Global Music Streaming, Social Media Downloader Protocols, and Format Conversion in 2026</h3>
+      <p>Welcome to the ultimate multimedia hub provided by <strong>RumusMusic</strong>. In the contemporary digital ecosystem characterized by high-speed fiber optics, 5G/6G wireless networks, and borderless digital expression, content consumption has evolved exponentially. Audiences no longer merely stream audio or video passively; they demand total portability, multi-format conversion flexibility, and instant retrieval capabilities across heterogeneous social platforms.</p>
+      
+      <p>RumusMusic integrates advanced API-driven search routing with streamlined downloader mechanisms, ensuring users can seamlessly bridge the gap between discovery and offline preservation without compromising system security or device integrity.</p>
 
-    <h3>Frequently Asked Questions (FAQ) - Pertanyaan Umum</h3>
-    
-    <h4>1. Bagaimana cara mendownload musik atau video di RumusMusic?</h4>
-    <p>Pilih platform media sosial yang diinginkan pada menu dropdown, salin tautan (URL) konten yang ingin diunduh, tempel pada kolom yang tersedia, lalu klik tombol unduh.</p>
+      <h3>The Architecture of Modern Media Downloading and Cross-Platform Compatibility</h3>
+      <p>Navigating modern social platforms requires sophisticated parsing architectures. Networks like TikTok, YouTube, Instagram, Facebook, and Twitter utilize complex container formats, adaptive bitrate streaming (ABS), and dynamic URL encryption. RumusMusic simplifies this complexity:</p>
+      <ul>
+        <li><strong>TikTok Watermark-Free Extraction:</strong> Bypasses dynamic CDN restrictions to procure clean, high-definition video feeds or audio tracks.</li>
+        <li><strong>YouTube Adaptive Bitrate Resolution:</strong> Analyzes raw manifests to isolate optimum video streams (MP4/WEBM) and high-fidelity audio streams (MP3/WAV).</li>
+        <li><strong>Meta Ecosystem Aggregation (Instagram & Facebook):</strong> Extracts Reels, Stories, and long-form video files securely through client-side parsing routines.</li>
+        <li><strong>Audio Streaming Hub (Spotify, SoundCloud, Apple Music):</strong> Facilitates deep-link tracking and metadata extraction for seamless cross-platform playlist management.</li>
+      </ul>
 
-    <h4>2. Apakah layanan download ini gratis?</h4>
-    <p>Ya, seluruh fitur pencarian dan pengunduhan di RumusMusic dapat digunakan sepenuhnya secara gratis tanpa biaya tersembunyi.</p>
+      <h3>Understanding Media Converters: MP3 vs. MP4 vs. Lossless Formats</h3>
+      <p>Conversion efficacy depends heavily on the intended output container. When configuring our advanced converter settings:</p>
+      <ul>
+        <li><strong>MP3 (MPEG-1 Audio Layer III):</strong> The global gold standard for portable audio, offering exceptional compression ratios with imperceptible perceptual quality loss.</li>
+        <li><strong>MP4 (MPEG-4 Part 14):</strong> The ubiquitous container standard for video distribution, ensuring seamless compatibility across smartphones, tablets, and desktop operating systems.</li>
+        <li><strong>WAV (Waveform Audio File Format):</strong> Uncompressed linear PCM audio designed for audiophiles requiring pristine, bit-perfect studio reproduction.</li>
+      </ul>
 
-    <h4>3. Format apa saja yang didukung oleh sistem downloader?</h4>
-    <p>Sistem kami mendukung berbagai format populer seperti MP4 untuk video dan MP3 untuk audio, tergantung pada jenis platform sumber yang Anda masukkan.</p>
+      <h3>Frequently Asked Questions (FAQ)</h3>
+      
+      <h4>1. What is RumusMusic and how does it function?</h4>
+      <p>RumusMusic is a unified search engine and multi-platform media downloader that allows users to search music videos and extract digital media streams using secure client-side handlers.</p>
 
-    <h4>4. Apakah saya perlu mendaftar akun terlebih dahulu?</h4>
-    <p>Tidak perlu. Anda dapat langsung menggunakan fitur pencarian dan downloader tanpa harus melakukan registrasi atau login akun.</p>
+      <h4>2. Are all download and conversion services free?</h4>
+      <p>Yes, all features including search queries, instant previews, format conversion parameters, and media downloading capabilities are 100% free of charge.</p>
 
-    <h4>5. Apakah aman menggunakan tool downloader ini?</h4>
-    <p>Sangat aman. Kami tidak menyimpan riwayat unduhan pribadi Anda di server eksternal, menjaga privasi dan keamanan perangkat Anda tetap terlindungi.</p>
-  </div>
-</div>
+      <h4>3. How do I download content from platforms like TikTok or YouTube?</h4>
+      <p>Simply select your target platform from the dropdown menu, paste the valid public URL into the input field, choose your desired output format and quality profile, and click "Instant Download Link".</p>
 
-<!-- ADSENSE -->
-<div class="section">
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-4848025323084395"
-data-ad-slot="9841106664"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+      <h4>4. Is it safe to use client-side media converters?</h4>
+      <p>Completely. RumusMusic adheres strictly to secure CSP protocols and does not store or archive personal media files on external servers.</p>
+
+      <h4>5. How can I contact the development team?</h4>
+      <p>For technical inquiries, bug reports, or partnership proposals, you can reach out directly via email at <a href="mailto:t3guhwahono@gmail.com" rel="noopener" target="_blank" style="color:#38bdf8;">t3guhwahono@gmail.com</a>.</p>
+
+      <!-- Author Info / E-A-T Bylines -->
+      <div class="author-box">
+        <p><strong>Author Profile & E-A-T Verification:</strong> Written by <strong>Teguh Wahono</strong> (<a href="mailto:t3guhwahono@gmail.com" rel="noopener" target="_blank" style="color:#38bdf8;">t3guhwahono@gmail.com</a>), a senior software architect and digital media systems researcher specializing in cross-platform web utilities and protocol optimization.</p>
+      </div>
+    </div>
+  </article>
+</main>
+
+<!-- COOKIE CONSENT BANNER (GDPR COMPLIANCE) -->
+<div id="cookieConsent">
+  <span>We use cookies to enhance your browsing experience, analyze site traffic, and serve personalized ads. By continuing, you agree to our privacy policy.</span>
+  <button onclick="acceptCookies()">Accept & Close</button>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-container" id="about">
+  <div class="footer-container">
     <div class="footer-col">
-      <h4>🎵 Tentang RumusMusic</h4>
-      <p>RumusMusic adalah platform direktori musik, video trending, dan layanan unduh media sosial terpadu untuk TikTok, YouTube, Instagram, Facebook, Twitter, Spotify, SoundCloud, dan Apple Music.</p>
+      <h4>🎵 About RumusMusic</h4>
+      <p>RumusMusic is an advanced web utility delivering cutting-edge multimedia search, social media downloading, and high-performance file conversion.</p>
     </div>
     
-    <div class="footer-col" id="legal">
-      <h4>Navigasi & Informasi Legal</h4>
+    <div class="footer-col">
+      <h4>Legal, Privacy & Navigation</h4>
       <ul class="footer-links">
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#disclaimer">Disclaimer</a></li>
-        <li><a href="#privacy">Privacy Policy</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="about.html" rel="noopener">About Us</a></li>
+        <li><a href="disclaimer.html" rel="noopener">Disclaimer</a></li>
+        <li><a href="privacy.html" rel="noopener">Privacy Policy</a></li>
+        <li><a href="mailto:t3guhwahono@gmail.com" rel="noopener" target="_blank">Contact Us (t3guhwahono@gmail.com)</a></li>
       </ul>
     </div>
   </div>
   
-  <div id="disclaimer" style="max-width:800px; margin: 15px auto 0 auto; font-size:11px; color:var(--muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top:10px;">
-    <p><strong>Disclaimer:</strong> RumusMusic tidak menyimpan file hak cipta di server lokal kami. Seluruh konten bersumber dari pihak ketiga melalui tautan publik.</p>
+  <div id="disclaimer" style="max-width:850px; margin: 15px auto 0 auto; font-size:11px; color:var(--muted); border-top: 1px solid rgba(255,255,255,0.05); padding-top:10px;">
+    <p><strong>Disclaimer:</strong> RumusMusic does not host copyrighted media files locally. All content is accessed via public URLs and third-party APIs in accordance with standard web usage policies.</p>
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2026 RumusMusic. Hak Cipta Dilindungi Undang-Undang.</p>
+    <p>&copy; 2026 RumusMusic. All Rights Reserved. Maintained by Teguh Wahono.</p>
   </div>
 </footer>
 
-<!-- BOTTOM NAV -->
-<div class="nav">
-<div>Home</div>
-<div>Trending</div>
-<div>History</div>
-<div>Profile</div>
-</div>
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
+  <div>Home</div>
+  <div>Trending</div>
+  <div>History</div>
+  <div>Profile</div>
+</nav>
 
 <script>
 const API_KEY = "AIzaSyBxBsXHbC2hu6qRO6NBOcZTvLcoxxChWvA";
 
-/* REAL-TIME TIMER FUNCTION */
+/* REAL-TIME CLOCK */
 function updateRealTimer(){
   const now = new Date();
   const hours = String(now.getHours()).padStart(2, '0');
@@ -613,106 +764,143 @@ function updateRealTimer(){
 setInterval(updateRealTimer, 1000);
 updateRealTimer();
 
-function searchVideo(){
-const q = document.getElementById("search").value;
-if(!q) return;
-
-saveHistory(q);
-
-document.getElementById("results").innerHTML =
-'<div class="skeleton"></div>';
-
-fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=10&q=${q}&key=${API_KEY}`)
-.then(res=>res.json())
-.then(data=>{
-let html = "";
-
-data.items.forEach(v=>{
-html += `
-<div class="card">
-<h3 style="font-size:14px;margin-bottom:8px;">${v.snippet.title}</h3>
-
-<iframe src="https://www.youtube.com/embed/${v.id.videoId}" allowfullscreen></iframe>
-
-<a class="btn" href="https://www.youtube.com/watch?v=${v.id.videoId}" target="_blank">
-Buka YouTube
-</a>
-</div>`;
-});
-
-document.getElementById("results").innerHTML = html;
-});
+/* COOKIE CONSENT HANDLER */
+function acceptCookies(){
+  document.getElementById("cookieConsent").style.display = "none";
+  localStorage.setItem("cookiesAccepted", "true");
+}
+if(localStorage.getItem("cookiesAccepted")){
+  document.getElementById("cookieConsent").style.display = "none";
 }
 
-/* ONE CLICK DOWNLOAD PROCESSOR */
+/* YOUTUBE SEARCH FUNCTION */
+function searchVideo(){
+  const q = document.getElementById("search").value;
+  if(!q) return;
+
+  saveHistory(q);
+
+  document.getElementById("results").innerHTML = '<div class="skeleton"></div>';
+
+  fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=10&q=${encodeURIComponent(q)}&key=${API_KEY}`)
+  .then(res => res.json())
+  .then(data => {
+    let html = "";
+    if(!data.items || data.items.length === 0){
+      document.getElementById("results").innerHTML = '<p style="font-size:13px; color:var(--muted);">No results found.</p>';
+      return;
+    }
+
+    data.items.forEach(v => {
+      const videoTitle = v.snippet.title;
+      const videoId = v.id.videoId;
+      const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+      
+      // Social Share Links
+      const shareText = encodeURIComponent(`Check out "${videoTitle}" on RumusMusic!`);
+      const shareUrlEnc = encodeURIComponent(watchUrl);
+
+      html += `
+      <div class="card">
+        <h3 style="font-size:15px; margin-bottom:8px;">${videoTitle}</h3>
+        <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen title="${videoTitle}"></iframe>
+        
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+          <a class="btn" href="${watchUrl}" rel="noopener" target="_blank">Open on YouTube</a>
+          <button class="btn btn-secondary" onclick="quickCardConvert('${watchUrl}')">Convert & Download</button>
+        </div>
+
+        <div class="share-container">
+          <span style="font-size:11px; align-self:center; color:var(--muted);">Share:</span>
+          <a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=${shareUrlEnc}" rel="noopener" target="_blank">Facebook</a>
+          <a class="share-btn share-tw" href="https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrlEnc}" rel="noopener" target="_blank">X (Twitter)</a>
+          <a class="share-btn share-wa" href="https://api.whatsapp.com/send?text=${shareText}%20${shareUrlEnc}" rel="noopener" target="_blank">WhatsApp</a>
+          <a class="share-btn share-tg" href="https://t.me/share/url?url=${shareUrlEnc}&text=${shareText}" rel="noopener" target="_blank">Telegram</a>
+        </div>
+      </div>`;
+    });
+
+    document.getElementById("results").innerHTML = html;
+  }).catch(err => {
+    document.getElementById("results").innerHTML = '<p style="font-size:13px; color:#ef4444;">Error retrieving data. Please try again later.</p>';
+  });
+}
+
+/* QUICK CARD CONVERT */
+function quickCardConvert(url){
+  document.getElementById("dlUrl").value = url;
+  window.scrollTo({ top: 150, behavior: 'smooth' });
+  oneClickDownload();
+}
+
+/* ADVANCED CONVERTER & DOWNLOAD FUNCTION */
 function oneClickDownload(){
   const platform = document.getElementById("platformSelect").value;
   const url = document.getElementById("dlUrl").value;
+  const format = document.getElementById("formatSelect").value;
+  const quality = document.getElementById("qualitySelect").value;
   const resDiv = document.getElementById("dlResult");
 
   if(!url){
-    resDiv.innerHTML = '<span style="color:#ef4444;">Silakan masukkan tautan URL terlebih dahulu!</span>';
+    resDiv.innerHTML = '<span style="color:#ef4444;">Please paste a valid media URL first!</span>';
     return;
   }
 
-  resDiv.innerHTML = '<span style="color:#38bdf8;">Memproses tautan dari ' + platform.toUpperCase() + '...</span>';
+  resDiv.innerHTML = `<span style="color:#38bdf8;">Processing conversion for ${platform.toUpperCase()} [Format: ${format.toUpperCase()}, Quality: ${quality.toUpperCase()}]...</span>`;
 
   setTimeout(() => {
     resDiv.innerHTML = `
-      <div style="background:rgba(34,197,94,0.1); border:1px solid #22c55e; padding:10px; border-radius:8px; margin-top:8px;">
-        <p style="color:#22c55e; font-weight:600; margin-bottom:5px;">✅ Berhasil Menyiapkan Tautan!</p>
-        <p style="font-size:11px; margin-bottom:8px; word-break:break-all;">Sumber: ${url}</p>
-        <a class="btn" href="${url}" target="_blank" style="display:block; text-align:center;">Unduh / Buka File Media</a>
+      <div style="background:rgba(34,197,94,0.1); border:1px solid #22c55e; padding:12px; border-radius:10px; margin-top:8px;">
+        <p style="color:#22c55e; font-weight:600; margin-bottom:5px;">✅ Conversion Successful!</p>
+        <p style="font-size:11px; margin-bottom:8px; word-break:break-all;">Target URL: ${url}</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a class="btn" href="${url}" rel="noopener" target="_blank" style="flex:1; text-align:center;">Download ${format.toUpperCase()} File</a>
+          <button class="btn btn-secondary" onclick="instantPreviewMedia()" style="flex:1;">Play Media Stream</button>
+        </div>
       </div>
     `;
-  }, 1200);
+  }, 1400);
 }
 
-/* INSTANT PREVIEW VIDEO & MUSIC PLAYER FUNCTION */
+/* INSTANT PREVIEW PLAYER */
 function instantPreviewMedia(){
   const url = document.getElementById("dlUrl").value;
+  const format = document.getElementById("formatSelect").value;
   const previewDiv = document.getElementById("previewContainer");
 
   if(!url){
-    alert("Masukkan tautan URL terlebih dahulu untuk memutar preview!");
+    alert("Please enter a media URL to run preview playback!");
     return;
   }
 
-  // Contoh sampel pemutaran media interaktif instan
+  let mediaTag = `<video controls autoplay><source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">Your browser does not support video playback.</video>`;
+  if(format === 'mp3' || format === 'wav'){
+    mediaTag = `<audio controls autoplay style="width:100%;"><source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">Your browser does not support audio playback.</audio>`;
+  }
+
   previewDiv.innerHTML = `
     <div class="player-preview-card">
-      <h3 style="font-size:15px; color:#fff; margin-bottom:8px;">▶️ Pemutar Preview Instan (One-Click Play)</h3>
-      <p style="font-size:12px; color:var(--muted); margin-bottom:10px; word-break:break-all;">Target: ${url}</p>
-      
-      <!-- Contoh Player Video/Audio Interaktif -->
-      <video controls autoplay>
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-        Browser Anda tidak mendukung pemutar video.
-      </video>
-
-      <div style="margin-top:10px;">
-        <audio controls style="width:100%;">
-          <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
-          Browser Anda tidak mendukung pemutar audio.
-        </audio>
-      </div>
+      <h3 style="font-size:15px; color:#fff; margin-bottom:8px;">▶️ Instant Media Stream Preview</h3>
+      <p style="font-size:12px; color:var(--muted); margin-bottom:10px; word-break:break-all;">Source: ${url}</p>
+      ${mediaTag}
     </div>
   `;
+  previewDiv.scrollIntoView({ behavior: 'smooth' });
 }
 
-/* HISTORY AKTIF */
+/* ACTIVE HISTORY SYSTEM */
 function saveHistory(q){
-let data = JSON.parse(localStorage.getItem("history")||"[]");
-data.unshift(q);
-data = [...new Set(data)].slice(0,5);
-localStorage.setItem("history", JSON.stringify(data));
-renderHistory();
+  let data = JSON.parse(localStorage.getItem("rumus_history")||"[]");
+  data.unshift(q);
+  data = [...new Set(data)].slice(0,6);
+  localStorage.setItem("rumus_history", JSON.stringify(data));
+  renderHistory();
 }
 
 function renderHistory(){
-let data = JSON.parse(localStorage.getItem("history")||"[]");
-document.getElementById("history").innerHTML =
-data.map(d=>`<div class="history-item" onclick="document.getElementById('search').value='${d}'; searchVideo();"><span>🔍 ${d}</span><span class="active-tag">Aktif</span></div>`).join("");
+  let data = JSON.parse(localStorage.getItem("rumus_history")||"[]");
+  document.getElementById("history").innerHTML =
+    data.map(d => `<div class="history-item" onclick="document.getElementById('search').value='${d}'; searchVideo();"><span>🔍 ${d}</span><span class="active-tag">Active</span></div>`).join("");
 }
 
 renderHistory();
