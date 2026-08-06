@@ -110,6 +110,78 @@ To run or modify the RumusMusic source code locally on your workstation, follow 
 * A local development server or extension (e.g., VS Code Live Server extension).
 
 ### Step-by-Step Instructions
-1. Clone the official repository or download the source files:
+
+- Clone the official repository or download the source files:
    ```bash
    git clone [https://github.com/rumus-music/rumus-music.github.io.git](https://github.com/rumus-music/rumus-music.github.io.git)
+
+Navigate into the project directory:
+
+Bash
+cd rumus-music.github.io
+Open the project folder in your preferred code editor (such as Visual Studio Code).
+
+Launch index.html using a local server utility to test all JavaScript functions, CSS animations, and API requests correctly.
+
+## 8. API Integration & Configuration
+
+RumusMusic utilizes external API keys (such as the YouTube Data API v3) to power its real-time search functionality.
+
+Configuring Keys: Developers can update the API_KEY variable inside the main script block of index.html:
+
+JavaScript
+const API_KEY = "YOUR_VALID_API_KEY_HERE";
+Quota Management: Ensure your API project monitors request limits to prevent throttling during high-traffic surges.
+
+## 9. Performance Optimization & Lazy Loading Strategies
+To maintain lightning-fast page load speeds and adhere to core web vitals, RumusMusic incorporates several optimization techniques:
+
+Lazy Loaded AdSense: Google AdSense scripts are dynamically injected and initialized only after the DOM content has fully loaded (DOMContentLoaded), eliminating render-blocking bottlenecks.
+
+Optimized Image Assets: Logos and favicons (https://rumus-music.github.io/rumusmusic.png) are lightweight and cached efficiently.
+
+CSS Shimmer Skeletons: Asynchronous fetch requests display animated shimmer skeleton loaders while awaiting data payloads, greatly improving perceived performance.
+
+For general licensing guidelines and open-source compliance references, review Creative Commons frameworks.
+
+## 10. Author Credentials & E-A-T Verification
+RumusMusic is meticulously researched, designed, and maintained by recognized professionals in digital media engineering:
+
+Author Profile & E-A-T Verification: Written by Teguh Wahono (t3guhwahono@gmail.com), a senior software architect and digital media systems researcher specializing in cross-platform web utilities, client-side script optimization, and secure media conversion protocols.
+
+## 11. External References & Industry Standards
+For further reading regarding web standards, multimedia engineering, and open-source software development, please consult these authoritative external resources:
+
+MDN Web Docs - Web Technologies
+
+World Wide Web Consortium (W3C)
+
+GitHub Developer Platform
+
+Electronic Frontier Foundation
+
+Creative Commons Legal Tools
+
+TechCrunch Media & Technology News
+
+Wired Digital Culture & Innovation
+
+Wikipedia - MPEG-4 Format Specification
+
+The Verge Tech & Culture Journal
+
+## 12. Frequently Asked Questions (FAQ)
+Q1: Is RumusMusic completely free to use?
+A: Yes! All search queries, media downloader protocols, format conversion tools, and preview players are 100% free of charge.
+
+Q2: How do I report a bug or suggest a new platform parser?
+A: You can reach out directly to the lead developer via email at t3guhwahono@gmail.com with detailed reproduction steps or feature requests.
+
+Q3: Does RumusMusic store my downloaded files or search history on a remote database?
+A: No. All active search history is stored securely within your local browser storage (localStorage), and media conversion operates via secure client-side handling.
+
+## 13. License & Copyright Disclaimer
+© 2026 RumusMusic. All Rights Reserved. Maintained by Teguh Wahono.
+
+Disclaimer: RumusMusic does not host copyrighted media files locally on its servers. All content is accessed dynamically via public URLs and third-party APIs in strict compliance with standard web usage policies and fair use guidelines.
+
