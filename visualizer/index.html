@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Audio Visualizer Tools - Rumus Music</title>
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://rumus-music.github.io/visualizer/index.html">
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="Free Audio Visualizer Tools - Rumus Music">
+    <meta property="og:description" content="Create stunning real-time audio visualizers and music video spectrum animations for free with Rumus Music.">
+    <meta property="og:image" content="https://rumus-music.github.io/rumusmusic.png">
+    <meta property="og:url" content="https://rumus-music.github.io/visualizer/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Audio Visualizer Tools - Rumus Music">
+    <meta name="twitter:description" content="Transform audio tracks into dynamic music visualizers with responsive backgrounds instantly.">
+    <meta name="twitter:image" content="https://rumus-music.github.io/rumusmusic.png">
+
+    <!-- Favicon & Logo -->
+    <link rel="icon" type="image/png" href="https://rumus-music.github.io/rumusmusic.png">
+
+    <!-- Verification Tags -->
+    <meta name="google-site-verification" content="c5Cc9r8Eyp-IXdjJjJEtiGejzN98C7KM5g8ONi9ddSk">
+    <meta name="msvalidate.01" content="75301752A004CABDFCDA5430AA1878B1">
+
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395" crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4848025323084395"></amp-auto-ads>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14JZJ43WTF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-14JZJ43WTF');
+    </script>
+    <script async src="/150n"></script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Free Audio Visualizer Tools",
+      "url": "https://rumus-music.github.io/visualizer/index.html",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://rumus-music.github.io/visualizer/index.html?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Best Free Audio Visualizer Tools for Music Creators",
+      "image": "https://rumus-music.github.io/rumusmusic.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Rumus Music"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rumus Music",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rumus-music.github.io/rumusmusic.png"
+        }
+      },
+      "datePublished": "2026-06-01"
+    }
+    </script>
+
+    <!-- CSS Styling (Rainbow Hover, Animated Up, Responsive Design) -->
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --secondary-color: #1e293b;
+            --accent-color: #3b82f6;
+            --text-color: #f8fafc;
+            --rainbow-speed: 4s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Video Container */
+        #bg-video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        #bg-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3);
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.95);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Rainbow Hover Effect */
+        @keyframes rainbow {
+            0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+            20% { color: #ff8800; text-shadow: 0 0 10px #ff8800; }
+            40% { color: #ffff00; text-shadow: 0 0 10px #ffff00; }
+            60% { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
+            80% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+            100% { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
+        }
+
+        .nav-links a:hover {
+            animation: rainbow var(--rainbow-speed) infinite;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animated Up Effect */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-up {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Hero Section & Typing Effect */
+        .hero {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .typing-container {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            min-height: 60px;
+        }
+
+        .typing-text {
+            border-right: 3px solid #38bdf8;
+            white-space: nowrap;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #38bdf8; }
+        }
+
+        /* Main App Interface */
+        .app-container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: rgba(30, 41, 59, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            backdrop-filter: blur(15px);
+        }
+
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .control-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        select, input, button {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        select option {
+            background: #1e293b;
+            color: white;
+        }
+
+        button {
+            background: #2563eb;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        /* Visualizer Display Screen */
+        .display-screen {
+            background: #000;
+            height: 280px;
+            border-radius: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .visualizer-overlay {
+            z-index: 2;
+            pointer-events: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+
+        .download-action-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .download-action-row {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+
+        .download-box {
+            background: rgba(0,0,0,0.3);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .download-box h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            color: #38bdf8;
+        }
+
+        /* History Panel */
+        .history-box {
+            margin-top: 20px;
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 8px;
+            max-height: 140px;
+            overflow-y: auto;
+        }
+
+        .history-box h3 {
+            font-size: 1rem;
+            margin-bottom: 8px;
+            color: #38bdf8;
+        }
+
+        .history-list {
+            list-style: none;
+            font-size: 0.85rem;
+        }
+
+        .history-list li {
+            padding: 4px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* Article Section */
+        .article-section {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 40px;
+            border-radius: 15px;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .article-section h2, .article-section h3 {
+            color: #fff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-section p {
+            margin-bottom: 15px;
+        }
+
+        .article-section a {
+            color: #38bdf8;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video Layer -->
+    <div id="bg-video-container">
+        <video id="active-bg-video" autoplay muted loop>
+            <source src="https://rumus-music.github.io/vidio/dubai.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="https://rumus-music.github.io/" class="nav-logo">
+            <img src="https://rumus-music.github.io/rumusmusic.png" alt="Logo">
+            <span>Rumus Music</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="https://rumus-music.github.io/">Home</a></li>
+            <li><a href="#app">Visualizer Tool</a></li>
+            <li><a href="#article">Article</a></li>
+            <li><a href="https://rumus-music.github.io/downloader/index.html">Downloader</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section with Typing Effect -->
+    <section class="hero animated-up">
+        <div class="typing-container">
+            <span class="typing-text" id="typing"></span>
+        </div>
+        <p>Create real-time audio spectrums and dynamic music visualizers with responsive backgrounds.</p>
+    </section>
+
+    <!-- App Interface Container -->
+    <div class="app-container animated-up" id="app">
+        
+        <!-- Controls Grid -->
+        <div class="control-grid">
+            <!-- Audio Track Selector -->
+            <div class="control-group">
+                <label for="audioSelect">Select Audio Track:</label>
+                <select id="audioSelect">
+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">SoundHelix Electronic Track 1</option>
+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">SoundHelix Ambient Mix 2</option>
+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">SoundHelix Synthwave 3</option>
+                </select>
+            </div>
+
+            <!-- Visualizer Theme Selector -->
+            <div class="control-group">
+                <label for="themeSelect">Visualizer Theme:</label>
+                <select id="themeSelect">
+                    <option value="bars">Frequency Spectrum Bars</option>
+                    <option value="wave">Oscilloscope Waveform</option>
+                    <option value="circle">Circular Pulse Ring</option>
+                </select>
+            </div>
+
+            <!-- Video/Background Selector -->
+            <div class="control-group">
+                <label for="videoSelect">MP4 Background Video:</label>
+                <select id="videoSelect">
+                    <option value="https://rumus-music.github.io/vidio/dubai.mp4">Dubai Skyline</option>
+                    <option value="https://rumus-music.github.io/vidio/istambul.mp4">Istanbul City</option>
+                    <option value="https://rumus-music.github.io/vidio/madinah.mp4">Madinah View</option>
+                    <option value="https://rumus-music.github.io/vidio/masjidqatar.mp4">Masjid Qatar</option>
+                    <option value="https://rumus-music.github.io/vidio/qatarcity.mp4">Qatar City</option>
+                    <option value="https://rumus-music.github.io/vidio/perahu.mp4">River Boat</option>
+                    <option value="https://rumus-music.github.io/vidio/panorama.mp4">Nature Panorama</option>
+                    <option value="https://rumus-music.github.io/vidio/burung.mp4">Flying Birds</option>
+                    <option value="https://rumus-music.github.io/vidio/italia.mp4">Italy View</option>
+                    <option value="https://rumus-music.github.io/vidio/pesawat.mp4">Airplane Flight</option>
+                    <option value="https://rumus-music.github.io/vidio/borobudur.mp4">Borobudur Temple</option>
+                    <option value="https://rumus-music.github.io/vidio/london.mp4">London City</option>
+                    <option value="https://rumus-music.github.io/vidio/swiss.mp4">Swiss Alps</option>
+                    <option value="https://rumus-music.github.io/vidio/dragonworld.mp4">Fantasy World</option>
+                    <option value="https://rumus-music.github.io/vidio/bunga.mp4">Blooming Flowers</option>
+                    <option value="https://rumus-music.github.io/vidio/indah.mp4">Scenic Landscape</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Preview Display Screen with Canvas Visualizer -->
+        <div class="display-screen" id="displayScreen">
+            <canvas id="visualizerCanvas"></canvas>
+            <div class="visualizer-overlay" id="overlayTitle">Rumus Music Visualizer</div>
+        </div>
+
+        <!-- Audio Player Controls -->
+        <audio id="audioPlayer" crossorigin="anonymous" controls style="width: 100%; margin-bottom: 20px;"></audio>
+
+        <!-- Download Action Panels -->
+        <div class="download-action-row">
+            <div class="download-box">
+                <h3>Export Visualizer Data</h3>
+                <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 10px;">Save current spectrum settings.</p>
+                <button id="exportConfigBtn">📥 Export Preset JSON</button>
+            </div>
+            <div class="download-box">
+                <h3>Download Background MP4</h3>
+                <p style="font-size: 0.85rem; color: #94a3b8; margin-bottom: 10px;">Get scenic background video clip.</p>
+                <button id="downloadVideoBtn">⬇ Download Video MP4</button>
+            </div>
+        </div>
+
+        <!-- History Box -->
+        <div class="history-box">
+            <h3>Visualizer Activity Log</h3>
+            <ul class="history-list" id="historyList">
+                <li>Visualizer tool initialized successfully.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Article Section (English Article with 10 Internal Links & 10 External Links) -->
+    <article class="article-section animated-up" id="article">
+        <h2>The Best Free Audio Visualizer Tools for Modern Music Creators</h2>
+        <p>Creating compelling visual media for audio tracks is vital in today's digital landscape. With the <a href="https://rumus-music.github.io/">Rumus Music Main Hub</a>, creators can utilize our advanced <a href="https://rumus-music.github.io/visualizer/index.html">Free Audio Visualizer Tools</a> to convert soundwaves into mesmerizing graphics. Whether you are producing promotional clips or compiling streaming mixes, our platform simplifies the entire workflow.</p>
+        
+        <p>Enhance your visual identity by integrating assets like our <a href="https://rumus-music.github.io/rumusmusic.png">Official Brand Logo</a> and our signature <a href="https://rumus-music.github.io/img/quran.png">Visual Design Asset</a>. Explore additional media utilities on our portal, such as our <a href="https://rumus-music.github.io/downloader/index.html">Quran Audio & MP4 Downloader</a>, to expand your multimedia projects efficiently.</p>
+
+        <h3>Professional Web References & Resources</h3>
+        <p>To deepen your expertise in web audio APIs and graphic rendering, explore these industry-standard platforms:</p>
+        <ul>
+            <li>1. Learn advanced web canvas techniques at <a href="https://developer.mozilla.org" target="_blank" rel="noopener">Mozilla Developer Network</a>.</li>
+            <li>2. Review web media standards on <a href="https://www.w3.org" target="_blank" rel="noopener">W3C Web Standards</a>.</li>
+            <li>3. Access open-source visualizer codebases via <a href="https://github.com" target="_blank" rel="noopener">GitHub Open Source</a>.</li>
+            <li>4. Track software and media tech trends at <a href="https://techcrunch.com" target="_blank" rel="noopener">TechCrunch Media</a>.</li>
+            <li>5. Explore cloud media rendering tools at <a href="https://cloud.google.com" target="_blank" rel="noopener">Google Cloud Platform</a>.</li>
+            <li>6. Read data standards and audio codecs on <a href="https://en.wikipedia.org/wiki/Audio_file_format" target="_blank" rel="noopener">Wikipedia Audio Formats</a>.</li>
+            <li>7. Analyze engagement performance using <a href="https://analytics.google.com" target="_blank" rel="noopener">Google Analytics Official</a>.</li>
+            <li>8. Build responsive user interfaces with <a href="https://getbootstrap.com" target="_blank" rel="noopener">Bootstrap Framework</a>.</li>
+            <li>9. Find comprehensive reference documentation at <a href="https://www.britannica.com" target="_blank" rel="noopener">Encyclopaedia Britannica</a>.</li>
+            <li>10. Check streaming protocols and guidelines at <a href="https://www.itu.int" target="_blank" rel="noopener">International Telecommunication Union</a>.</li>
+        </ul>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif; font-size: 14px; color: #666; border-top: 1px solid #e0e0e0; margin-top: 40px; background: #111;">
+            <p>&copy; rumusmusic. All rights reserved.</p>
+            <p style="margin-top: 10px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://rumusmusic.com/" style="color: #1a73e8; text-decoration: none;">Home</a> | 
+                <a href="https://rumusmusic.com/about.html" style="color: #1a73e8; text-decoration: none;">About Us</a> | 
+                <a href="https://rumusmusic.com/blog.html" style="color: #1a73e8; text-decoration: none;">Blog</a> | 
+                <a href="https://rumusmusic.com/contact.html" style="color: #1a73e8; text-decoration: none;">Contact</a> | 
+                <a href="https://rumusmusic.com/privacy-policy.html" style="color: #1a73e8; text-decoration: none;">Privacy Policy</a> | 
+                <a href="https://rumusmusic.com/terms.html" style="color: #1a73e8; text-decoration: none;">Terms & Conditions</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Typing Effect in Hero Header
+        const words = ["Free Audio Visualizer Tools", "Real-Time Spectrum Animations", "Dynamic Music Visualizer Studio"];
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typing').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 100);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typing').innerHTML = word.join("");
+                } else {
+                    i = (i + 1) % words.length;
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 50);
+            };
+            loopDeleting();
+        }
+        typingEffect();
+
+        // Audio & Visualizer Setup
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioSelect = document.getElementById('audioSelect');
+        const themeSelect = document.getElementById('themeSelect');
+        const videoSelect = document.getElementById('videoSelect');
+        const activeBgVideo = document.getElementById('active-bg-video');
+        const historyList = document.getElementById('historyList');
+        const canvas = document.getElementById('visualizerCanvas');
+        const ctx = canvas.getContext('2d');
+
+        audioPlayer.src = audioSelect.value;
+
+        audioSelect.addEventListener('change', function() {
+            audioPlayer.src = this.value;
+            audioPlayer.play();
+            addHistory(`Switched audio track to: ${this.options[this.selectedIndex].text}`);
+        });
+
+        videoSelect.addEventListener('change', function() {
+            activeBgVideo.src = this.value;
+            activeBgVideo.load();
+            activeBgVideo.play();
+            addHistory(`Updated background scene video.`);
+        });
+
+        // Web Audio API Setup
+        let audioCtx, analyser, sourceNode;
+        let isAudioInit = false;
+
+        function initAudioContext() {
+            if (isAudioInit) return;
+            try {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioCtx.createAnalyser();
+                sourceNode = audioCtx.createMediaElementSource(audioPlayer);
+                sourceNode.connect(analyser);
+                analyser.connect(audioCtx.destination);
+                analyser.fftSize = 256;
+                isAudioInit = true;
+            } catch(e) {
+                console.log("Audio context restriction prevented auto-init");
+            }
+        }
+
+        audioPlayer.addEventListener('play', () => {
+            initAudioContext();
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        });
+
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Animation Loop for Visualizer
+        function drawVisualizer() {
+            requestAnimationFrame(drawVisualizer);
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            let bufferLength = analyser ? analyser.frequencyBinCount : 64;
+            let dataArray = new Uint8Array(bufferLength);
+            
+            if (analyser && isAudioInit) {
+                analyser.getByteFrequencyData(dataArray);
+            } else {
+                // Dummy motion when audio is paused
+                for(let j=0; j<bufferLength; j++) {
+                    dataArray[j] = Math.floor(Math.abs(Math.sin(Date.now()*0.003 + j)*50));
+                }
+            }
+
+            let theme = themeSelect.value;
+            let centerX = canvas.width / 2;
+            let centerY = canvas.height / 2;
+
+            if (theme === 'bars') {
+                let barWidth = (canvas.width / bufferLength) * 2.5;
+                let barHeight;
+                let x = 0;
+
+                for (let i = 0; i < bufferLength; i++) {
+                    barHeight = dataArray[i] * 0.8;
+                    let red = barHeight + 25;
+                    let green = 150;
+                    let blue = 255;
+
+                    ctx.fillStyle = `rgb(${red},${green},${blue})`;
+                    ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+
+                    x += barWidth + 1;
+                }
+            } else if (theme === 'wave') {
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = '#38bdf8';
+                ctx.beginPath();
+
+                let sliceWidth = canvas.width / bufferLength;
+                let x = 0;
+
+                for (let i = 0; i < bufferLength; i++) {
+                    let v = dataArray[i] / 128.0;
+                    let y = v * centerY;
+
+                    if (i === 0) {
+                        ctx.moveTo(x, y);
+                    } else {
+                        ctx.lineTo(x, y);
+                    }
+                    x += sliceWidth;
+                }
+                ctx.lineTo(canvas.width, centerY);
+                ctx.stroke();
+            } else if (theme === 'circle') {
+                let radius = 60;
+                for (let i = 0; i < bufferLength; i++) {
+                    let barHeight = dataArray[i] * 0.5;
+                    let angle = (i * 2 * Math.PI) / bufferLength;
+                    
+                    let x1 = centerX + Math.cos(angle) * radius;
+                    let y1 = centerY + Math.sin(angle) * radius;
+                    let x2 = centerX + Math.cos(angle) * (radius + barHeight);
+                    let y2 = centerY + Math.sin(angle) * (radius + barHeight);
+
+                    ctx.strokeStyle = `hsl(${i * 3}, 100%, 50%)`;
+                    ctx.lineWidth = 3;
+                    ctx.beginPath();
+                    ctx.moveTo(x1, y1);
+                    ctx.lineTo(x2, y2);
+                    ctx.stroke();
+                }
+            }
+        }
+        drawVisualizer();
+
+        // Button Actions
+        document.getElementById('exportConfigBtn').addEventListener('click', function() {
+            let configData = {
+                tool: "Rumus Music Audio Visualizer",
+                track: audioSelect.value,
+                theme: themeSelect.value,
+                background: videoSelect.value,
+                timestamp: new Date().toISOString()
+            };
+            let blob = new Blob([JSON.stringify(configData, null, 2)], {type: 'application/json'});
+            let url = URL.createObjectURL(blob);
+            let a = document.createElement('a');
+            a.href = url;
+            a.download = 'visualizer_preset.json';
+            a.click();
+            addHistory('Exported visualizer preset JSON configuration.');
+        });
+
+        document.getElementById('downloadVideoBtn').addEventListener('click', function() {
+            let a = document.createElement('a');
+            a.href = videoSelect.value;
+            a.download = 'Background_Visualizer_Scene.mp4';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            addHistory('Downloaded background MP4 video clip.');
+        });
+
+        function addHistory(text) {
+            const li = document.createElement('li');
+            li.textContent = `[${new Date().toLocaleTimeString()}] ${text}`;
+            historyList.prepend(li);
+        }
+    </script>
+</body>
+</html>
