@@ -1,11 +1,13 @@
-# RumusMusic Robots.txt
-
 User-agent: *
 Allow: /
 
-# Block sensitive or system files
-Disallow: /service-worker.js
-Disallow: /manifest.json
+# Mengizinkan Google Ads / Media Partner Crawler (Opsional untuk monetisasi)
+User-agent: Mediapartners-Google
+Allow: /
 
-# Sitemap
+# Mengizinkan Google AdSense Bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Sitemap Utama Website
 Sitemap: https://rumus-music.github.io/sitemap.xml
