@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
 <loc>https://rumusmusic.com/</loc>
@@ -25,4 +27,57 @@
 <loc>https://rumusmusic.com/terms.html</loc>
 </url>
 
+
+
+    
+    <!-- Free Music Cutter -->
+    <url>
+        <loc>https://rumus-music.github.io/cutter/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Free Audio Clipper Music Tools No Login -->
+    <url>
+        <loc>https://rumus-music.github.io/clipper/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Downloader Tool -->
+    <url>
+        <loc>https://rumus-music.github.io/downloader/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Audio Editor Tool -->
+    <url>
+        <loc>https://rumus-music.github.io/editor/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Audio Control Studio -->
+    <url>
+        <loc>https://rumus-music.github.io/control/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Audio Visualizer Utility -->
+    <url>
+        <loc>https://rumus-music.github.io/visualizer/index.html</loc>
+        <lastmod>2026-03-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
+  
+
