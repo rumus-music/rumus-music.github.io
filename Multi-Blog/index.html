@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Artikel Multi-Blog</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://rumus-music.github.io/rumusmusic.png"/>
+    
+    <!-- Content Security Policy (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; frame-src 'self' https://www.youtube.com;"/>
+    
+    <!-- Google AdSense (Lazy Loaded) -->
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4257586289753883";
+        adsScript.crossOrigin = "anonymous";
+        document.head.appendChild(adsScript);
+    });
+    </script>
+    <meta name="google-adsense-account" content="ca-pub-4257586289753883">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14JZJ43WTF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-14JZJ43WTF');
+    </script>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "RumusMusic",
+      "url": "https://rumus-music.github.io/newsblog/index.html",
+      "logo": "https://rumus-music.github.io/rumusmusic.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "t3guhwahono@gmail.com",
+        "contactType": "Customer Support"
+      }
+    }
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 1100px; margin: 30px auto; padding: 0 20px; color: #333; line-height: 1.6; background: #f9f9f9; }
+        h1 { text-align: center; color: #1a73e8; margin-bottom: 25px; }
+        .filters { margin-bottom: 25px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+        .filters button { padding: 8px 16px; border: 1px solid #1a73e8; background: #fff; color: #1a73e8; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.2s; }
+        .filters button.active, .filters button:hover { background: #1a73e8; color: #fff; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 20px; }
+        .post { padding: 20px; border: 1px solid #e0e0e0; border-radius: 8px; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between; }
+        .post h3 { margin-top: 0; font-size: 1.2em; }
+        .post h3 a { color: #1a73e8; text-decoration: none; }
+        .post h3 a:hover { text-decoration: underline; }
+        .meta { font-size: 0.8em; color: #666; margin-bottom: 10px; }
+        .badge { background: #e8f0fe; color: #1a73e8; padding: 3px 8px; border-radius: 4px; font-size: 0.75em; display: inline-block; margin-bottom: 8px; font-weight: bold; }
+        .loading { font-style: italic; color: #666; grid-column: 1 / -1; text-align: center; padding: 40px; font-size: 1.1em; }
+    </style>
+</head>
+<body>
+
+    <h1>Portal Artikel Jaringan Blog</h1>
+    
+    <div class="filters" id="filter-container">
+        <button class="active" onclick="filterPosts('all', this)">Semua</button>
+        <button onclick="filterPosts('Tutorial', this)">Tutorial</button>
+        <button onclick="filterPosts('Pemrograman', this)">Pemrograman & Tech</button>
+        <button onclick="filterPosts('Bisnis', this)">Bisnis & UMKM</button>
+    </div>
+
+    <div id="posts-container" class="grid">
+        <div class="loading">Memuat artikel dari 8 blog... Mohon tunggu sebentar.</div>
+    </div>
+<!-- AdSense -->
+<section class="section" style="margin: 30px 0;">
+  <ins class="adsbygoogle"
+  style="display:block"
+  data-ad-client="ca-pub-4848025323084395"
+  data-ad-slot="9841106664"
+  data-ad-format="auto"
+  data-full-width-responsive="true"></ins>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+      try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e){}
+  });
+  </script>
+</section>
+
+
+<footer>
+    <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif; font-size: 14px; color: #666; border-top: 1px solid #e0e0e0; margin-top: 40px;">
+        <p>&copy; 2026 rumusmusic.com. All rights reserved.</p>
+        <p style="margin-top: 10px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+            <a href="https://rumusmusic.com/" style="color: #1a73e8; text-decoration: none;">Beranda</a> | 
+            <a href="https://rumusmusic.com/about.html" style="color: #1a73e8; text-decoration: none;">Tentang Kami</a> | 
+            <a href="https://rumusmusic.com/blog.html" style="color: #1a73e8; text-decoration: none;">Blog</a> | 
+            <a href="https://rumusmusic.com/contact.html" style="color: #1a73e8; text-decoration: none;">Kontak</a> | 
+            <a href="https://rumusmusic.com/privacy-policy.html" style="color: #1a73e8; text-decoration: none;">Kebijakan Privasi</a> | 
+            <a href="https://rumusmusic.com/terms.html" style="color: #1a73e8; text-decoration: none;">Syarat & Ketentuan</a>
+        </p>
+    </div>
+</footer>
+    <script>
+        const API_KEY = "AIzaSyBQzhHXSKDYsIkPHpI6m_zoiEvGsSr9a2I";
+
+        // Daftar 8 Blogspot Anda (parameter ?m=1 dibersihkan agar API mendeteksi dengan akurat)
+        const blogs = [
+            { name: "Bos Tutorial", url: "https://bos-tutorial.blogspot.com", category: "Tutorial" },
+            { name: "AW Dev Global", url: "https://awdevglobal.blogspot.com", category: "Pemrograman" },
+            { name: "Gotalen", url: "https://gotalen.blogspot.com", category: "Pemrograman" },
+            { name: "WA UMKM", url: "https://wa-umkm.blogspot.com", category: "Bisnis" },
+            { name: "Mikrodinet", url: "https://mikrodinet.blogspot.com", category: "Tutorial" },
+            { name: "Kata H", url: "https://kata-h.blogspot.com", category: "Tutorial" },
+            { name: "Enjhine", url: "https://enjhine.blogspot.com", category: "Pemrograman" },
+            { name: "Web Alhikmah", url: "https://webalhikmah.blogspot.com", category: "Bisnis" }
+        ];
+
+        let allPostsData = [];
+        const container = document.getElementById("posts-container");
+
+        async function fetchAllBlogs() {
+            try {
+                let fetchedPosts = [];
+
+                for (let blog of blogs) {
+                    try {
+                        const idRes = await fetch(`https://www.googleapis.com/blogger/v3/blogs/byurl?url=${blog.url}&key=${API_KEY}`);
+                        const idData = await idRes.json();
+
+                        if (idData.id) {
+                            const postsRes = await fetch(`https://www.googleapis.com/blogger/v3/blogs/${idData.id}/posts?key=${API_KEY}`);
+                            const postsData = await postsRes.json();
+
+                            if (postsData.items) {
+                                postsData.items.forEach(post => {
+                                    fetchedPosts.push({
+                                        title: post.title,
+                                        url: post.url,
+                                        published: post.published,
+                                        content: post.content,
+                                        category: blog.category,
+                                        blogName: blog.name
+                                    });
+                                });
+                            }
+                        }
+                    } catch (err) {
+                        console.error(`Gagal memuat blog ${blog.url}:`, err);
+                    }
+                }
+
+                allPostsData = fetchedPosts.sort((a, b) => new Date(b.published) - new Date(a.published));
+                renderPosts(allPostsData);
+
+            } catch (error) {
+                console.error("Terjadi kesalahan sistem:", error);
+                container.innerHTML = "<div class='loading'>Gagal memuat data artikel dari server.</div>";
+            }
+        }
+
+        function renderPosts(posts) {
+            if (posts.length === 0) {
+                container.innerHTML = "<div class='loading'>Tidak ada artikel ditemukan dari daftar blog tersebut.</div>";
+                return;
+            }
+
+            let html = "";
+            posts.forEach(post => {
+                const date = new Date(post.published).toLocaleDateString("id-ID", {
+                    day: 'numeric', month: 'short', year: 'numeric'
+                });
+
+                const snippet = post.content ? post.content.replace(/<[^>]*>?/gm, '').substring(0, 110) + "..." : "";
+
+                html += `
+                    <div class="post">
+                        <div>
+                            <span class="badge">${post.blogName}</span>
+                            <h3><a href="${post.url}" target="_blank">${post.title}</a></h3>
+                            <div class="meta">${date} • Kategori: ${post.category}</div>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.9em; color: #555;">${snippet}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        function filterPosts(category, buttonElement) {
+            document.querySelectorAll(".filters button").forEach(btn => btn.classList.remove("active"));
+            buttonElement.classList.add("active");
+
+            if (category === 'all') {
+                renderPosts(allPostsData);
+            } else {
+                const filtered = allPostsData.filter(p => p.category === category);
+                renderPosts(filtered);
+            }
+        }
+
+        fetchAllBlogs();
+    </script>
+
+</body>
+</html>
