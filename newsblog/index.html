@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsblog Rumus Music</title>
+    <meta name="description" content="Discover, stream, and download trending music, videos, and media from TikTok, YouTube, Instagram, Spotify, and more with high performance."/>
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://rumus-music.github.io/newsblog/index.html">
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="Newsblog Rumus Music"/>
+    <meta property="og:description" content="Stream trending videos and convert media files effortlessly in one unified platform."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://rumus-music.github.io/newsblog/index.html"/>
+    <meta property="og:image" content="https://rumus-music.github.io/rumusmusic.png"/>
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Newsblog Rumus Music"/>
+    <meta name="twitter:description" content="Stream trending videos and convert media files effortlessly."/>
+    <meta name="twitter:image" content="https://rumus-music.github.io/rumusmusic.png"/>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://rumus-music.github.io/rumusmusic.png"/>
+
+    <!-- Content Security Policy (CSP) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: 'unsafe-inline' 'unsafe-eval'; img-src 'self' data: https:; frame-src 'self' https://www.youtube.com;"/>
+
+    <!-- Google AdSense (Lazy Loaded) -->
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const adsScript = document.createElement('script');
+        adsScript.async = true;
+        adsScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4257586289753883";
+        adsScript.crossOrigin = "anonymous";
+        document.head.appendChild(adsScript);
+    });
+    </script>
+    <meta name="google-adsense-account" content="ca-pub-4257586289753883">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14JZJ43WTF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-14JZJ43WTF');
+    </script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "RumusMusic",
+      "url": "https://rumus-music.github.io/newsblog/index.html",
+      "logo": "https://rumus-music.github.io/rumusmusic.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "t3guhwahono@gmail.com",
+        "contactType": "Customer Support"
+      }
+    }
+    </script>
+
+    <!-- CSS Styling -->
+    <style>
+        :root {
+            --bg: #0B0F1A;
+            --card: rgba(255,255,255,0.06);
+            --stroke: rgba(255,255,255,0.12);
+            --text: #ffffff;
+            --muted: #9ca3af;
+            --p1: #7C3AED;
+            --p2: #2563EB;
+            --font: 'Poppins', Arial, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font); }
+        body { background: radial-gradient(circle at top,#111827,#0B0F1A); color: var(--text); min-height: 100vh; padding-bottom: 90px; line-height: 1.6; }
+        a { color: #38bdf8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        
+        /* Layout */
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        header { padding: 20px; text-align: center; font-weight: 700; font-size: 28px; background: linear-gradient(90deg,var(--p1),var(--p2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: flex; align-items: center; justify-content: center; gap: 12px; margin-bottom: 30px; }
+        
+        /* Forms & Inputs */
+        .search-box { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+        input[type="text"], input[type="url"] { flex: 1; padding: 12px 20px; border-radius: 8px; border: 1px solid var(--stroke); background: var(--card); color: var(--text); font-size: 16px; outline: none; min-width: 250px; }
+        button, .btn { padding: 12px 20px; border: none; border-radius: 8px; background: linear-gradient(90deg,var(--p1),var(--p2)); color: #fff; cursor: pointer; font-weight: 600; font-size: 14px; text-align: center; display: inline-block; transition: 0.3s; }
+        button:hover, .btn:hover { opacity: 0.9; transform: translateY(-2px); text-decoration: none; }
+        .btn-secondary { background: var(--card); border: 1px solid var(--stroke); }
+        
+        /* Grid Layouts */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .card, .post { padding: 20px; border: 1px solid var(--stroke); border-radius: 12px; background: var(--card); display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s; }
+        .card:hover, .post:hover { border-color: var(--p1); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .card iframe { width: 100%; height: 200px; border: none; border-radius: 8px; margin-bottom: 15px; }
+        
+        /* Filters */
+        .filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 20px; }
+        .filters button { background: var(--card); border: 1px solid var(--stroke); color: var(--muted); }
+        .filters button.active, .filters button:hover { background: var(--p1); color: #fff; border-color: var(--p1); }
+        
+        /* Typography */
+        h1, h2, h3 { margin-bottom: 15px; color: #fff; }
+        .meta { font-size: 0.85em; color: var(--muted); margin-bottom: 10px; }
+        .badge { background: rgba(124,58,237,0.2); color: #a78bfa; padding: 4px 10px; border-radius: 4px; font-size: 0.75em; display: inline-block; margin-bottom: 10px; font-weight: bold; }
+        
+        /* Article & Table */
+        .article-section { background: var(--card); padding: 30px; border-radius: 12px; border: 1px solid var(--stroke); margin-bottom: 40px; }
+        .article-section p { margin-bottom: 15px; color: #d1d5db; }
+        .seo-table-wrap { overflow-x: auto; margin: 20px 0; }
+        .seo-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        .seo-table th, .seo-table td { padding: 12px; border: 1px solid var(--stroke); text-align: left; }
+        .seo-table th { background: rgba(255,255,255,0.05); color: #fff; }
+        
+        /* Cookie & Nav */
+        #cookieConsent { position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%); background: #1f2937; padding: 15px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); z-index: 1000; display: flex; gap: 15px; align-items: center; width: 90%; max-width: 600px; font-size: 13px; border: 1px solid var(--stroke); }
+        .bottom-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #0f172a; display: flex; justify-content: space-around; padding: 15px 0; border-top: 1px solid var(--stroke); z-index: 100; }
+        .bottom-nav div { font-size: 14px; font-weight: bold; color: var(--muted); cursor: pointer; }
+        .bottom-nav div:hover { color: var(--p1); }
+        
+        /* Share Buttons */
+        .share-container { display: flex; gap: 8px; margin-top: 15px; flex-wrap: wrap; }
+        .share-btn { font-size: 12px; padding: 5px 10px; border-radius: 4px; color: #fff !important; text-decoration: none !important; }
+        .share-fb { background: #1877F2; } .share-tw { background: #000000; border: 1px solid #333; }
+        .share-wa { background: #25D366; } .share-tg { background: #229ED9; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header { font-size: 22px; }
+            .article-section { padding: 20px; }
+            #cookieConsent { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    RumusMusic Newsblog
+</header>
+
+<main class="container">
+
+    <!-- Search Tool Section -->
+    <section id="search-section" style="margin-bottom: 40px;">
+        <h2>🔍 Search YouTube Music & Videos</h2>
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search for songs, artists, or videos...">
+            <button onclick="searchVideo()">Search</button>
+        </div>
+        <div id="results" class="grid"></div>
+    </section>
+
+    <!-- Converter Section -->
+    <section id="converter-section" style="margin-bottom: 40px;">
+        <h2>⚡ Media Downloader & Converter</h2>
+        <div class="search-box">
+            <input type="url" id="dlUrl" placeholder="Paste YouTube, TikTok, or Instagram URL here...">
+            <button onclick="alert('Feature processing URL: ' + document.getElementById('dlUrl').value)">Convert URL</button>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section id="blog-section" style="margin-bottom: 40px;">
+        <h2>📰 Latest Tech & Business Articles</h2>
+        <div class="filters" id="filter-container">
+            <button class="active" onclick="filterPosts('all', this)">All</button>
+            <button onclick="filterPosts('HTML CSS', this)">HTML & CSS</button>
+            <button onclick="filterPosts('AI', this)">AI & Programming</button>
+            <button onclick="filterPosts('Bisnis', this)">Business</button>
+        </div>
+        <div id="posts-container" class="grid">
+            <div style="grid-column: 1 / -1; text-align: center; color: var(--muted);">Loading articles...</div>
+        </div>
+    </section>
+
+    <!-- AdSense -->
+    <section class="section" style="margin: 30px 0;">
+      <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-4848025323084395"
+      data-ad-slot="9841106664"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+      <script>
+      window.addEventListener('DOMContentLoaded', () => {
+          try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e){}
+      });
+      </script>
+    </section>
+
+    <!-- PILLAR ARTICLE (Includes 10 Internal & 10 External Links) -->
+    <article class="article-section">
+        <h1>The Ultimate Guide to Digital Media, Streaming, and Format Conversion in 2026</h1>
+        
+        <p>Welcome to the <a href="index.html">Newsblog Rumus Music</a> official knowledge base. Navigating the modern web requires robust tools and an understanding of how digital media flows across platforms. Whether you are using our <a href="#search-section">Search Tool</a> or our built-in <a href="#converter-section">Media Converter</a>, optimizing your experience is our top priority. For inquiries, you can always visit our <a href="contact.html">Contact Support</a> page.</p>
+
+        <h2>1. The Rise of Global Streaming</h2>
+        <p>The digital age has shifted how we consume audio and video. Organizations like the <a href="https://www.w3.org" target="_blank" rel="noopener">W3C (World Wide Web Consortium)</a> continually update web standards to support native HTML5 playback. Developers frequently consult platforms like <a href="https://developer.mozilla.org" target="_blank" rel="noopener">MDN Web Docs</a> to build scalable media players. According to recent tech reports on <a href="https://techcrunch.com" target="_blank" rel="noopener">TechCrunch</a>, adaptive bitrate streaming has revolutionized mobile consumption.</p>
+
+        <h3>1.1 Understanding Privacy and Security</h3>
+        <p>While streaming is ubiquitous, user privacy remains paramount. Groups like the <a href="https://www.eff.org" target="_blank" rel="noopener">Electronic Frontier Foundation (EFF)</a> advocate for secure web protocols. On our platform, we detail our data practices in our <a href="privacy.html">Privacy Policy</a> and strictly enforce our <a href="terms.html">Terms of Service</a>. We also maintain a strict <a href="dmca.html">DMCA Policy</a> to protect copyright holders.</p>
+
+        <h2>2. Media Formats Explained</h2>
+        <p>Choosing the right format is crucial. As highlighted by <a href="https://www.theverge.com" target="_blank" rel="noopener">The Verge</a>, consumers often debate between lossy and lossless formats. For video, the MPEG-4 standard is king (read more on <a href="https://en.wikipedia.org/wiki/MPEG-4" target="_blank" rel="noopener">Wikipedia's MPEG-4 page</a>). For audiophiles, WAV and FLAC remain top choices, a trend often discussed on tech publications like <a href="https://www.wired.com" target="_blank" rel="noopener">Wired</a>.</p>
+
+        <div class="seo-table-wrap">
+          <table class="seo-table">
+            <thead>
+              <tr>
+                <th>Format</th>
+                <th>Media Type</th>
+                <th>Compression Type</th>
+                <th>Ideal Use Case</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>MP3</strong></td>
+                <td>Audio</td>
+                <td>Lossy</td>
+                <td>Portable listening, smartphones</td>
+              </tr>
+              <tr>
+                <td><strong>MP4</strong></td>
+                <td>Video / Audio</td>
+                <td>Lossy (H.264)</td>
+                <td>Web streaming, Social Media</td>
+              </tr>
+              <tr>
+                <td><strong>WAV</strong></td>
+                <td>Audio</td>
+                <td>Lossless</td>
+                <td>Studio editing, archival</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>3. Utilizing Third-Party APIs Safely</h2>
+        <p>Our platform aggregates content using public APIs. We encourage creators to release content under licenses like <a href="https://creativecommons.org" target="_blank" rel="noopener">Creative Commons</a>. Developers looking to build similar tools often host their open-source repositories on <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>. Remember, platforms like <a href="https://www.youtube.com" target="_blank" rel="noopener">YouTube</a> and <a href="https://www.spotify.com" target="_blank" rel="noopener">Spotify</a> have their own usage guidelines.</p>
+
+        <p>Before downloading, please review our <a href="disclaimer.html">Disclaimer</a> to understand your legal responsibilities. We also invite you to learn more <a href="about.html">About Us</a> and check out our comprehensive <a href="faq.html">FAQ section</a>. For easy navigation, view our <a href="sitemap.html">Sitemap</a>.</p>
+    </article>
+
+</main>
+
+<!-- Cookie Consent -->
+<div id="cookieConsent">
+    <span>We use cookies to enhance your browsing experience. By continuing, you agree to our privacy policy.</span>
+    <button onclick="acceptCookies()">Accept & Close</button>
+</div>
+
+<!-- Footer -->
+<footer style="text-align: center; padding: 30px; border-top: 1px solid var(--stroke); margin-top: 20px; font-size: 13px; color: var(--muted);">
+    <p>&copy; 2026 RumusMusic. All Rights Reserved. Maintained by Teguh Wahono.</p>
+    <p style="margin-top: 10px;">Time: <span id="realTimer"></span></p>
+</footer>
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+    <div onclick="window.scrollTo(0,0)">Home</div>
+    <div onclick="document.getElementById('search-section').scrollIntoView()">Search</div>
+    <div onclick="document.getElementById('blog-section').scrollIntoView()">Articles</div>
+</nav>
+
+<!-- Main JavaScript -->
+<script>
+/* Global API Keys */
+const YT_API_KEY = "AIzaSyBxBsXHbC2hu6qRO6NBOcZTvLcoxxChWvA";
+const BLOG_API_KEY = "AIzaSyBQzhHXSKDYsIkPHpI6m_zoiEvGsSr9a2I";
+
+/* Clock function */
+function updateRealTimer(){
+    const now = new Date();
+    document.getElementById("realTimer").innerText = now.toLocaleTimeString('en-US', { hour12: false });
+}
+setInterval(updateRealTimer, 1000);
+updateRealTimer();
+
+/* Cookie Handler */
+function acceptCookies(){
+    document.getElementById("cookieConsent").style.display = "none";
+    localStorage.setItem("cookiesAccepted", "true");
+}
+if(localStorage.getItem("cookiesAccepted")){
+    document.getElementById("cookieConsent").style.display = "none";
+}
+
+/* YouTube Search Function */
+function searchVideo(){
+    const q = document.getElementById("search").value;
+    if(!q) return;
+
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = '<div style="grid-column: 1/-1; text-align: center;">Searching...</div>';
+
+    fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=6&q=${encodeURIComponent(q)}&key=${YT_API_KEY}`)
+    .then(res => res.json())
+    .then(data => {
+        let html = "";
+        if(!data.items || data.items.length === 0){
+            resultsDiv.innerHTML = '<p>No results found.</p>';
+            return;
+        }
+
+        data.items.forEach(v => {
+            const videoTitle = v.snippet.title;
+            const videoId = v.id.videoId;
+            const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
+            
+            html += `
+            <div class="card">
+                <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen title="${videoTitle}"></iframe>
+                <h3 style="font-size:15px; margin-bottom:10px;">${videoTitle}</h3>
+                <div style="display:flex; gap:10px;">
+                    <button class="btn btn-secondary" onclick="window.open('${watchUrl}', '_blank')">Watch</button>
+                    <button class="btn" onclick="quickCardConvert('${watchUrl}')">Convert</button>
+                </div>
+            </div>`;
+        });
+
+        resultsDiv.innerHTML = html;
+    }).catch(err => {
+        resultsDiv.innerHTML = '<p style="color:#ef4444;">Error retrieving data. (API Quota possibly exceeded).</p>';
+    });
+}
+
+/* Scroll to Converter Function (Fixed from original broken script) */
+function quickCardConvert(url){
+    const dlInput = document.getElementById("dlUrl");
+    const converterSection = document.getElementById("converter-section");
+    
+    dlInput.value = url;
+    converterSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
+    // Add visual highlight to input
+    dlInput.style.border = "2px solid #7C3AED";
+    setTimeout(() => { dlInput.style.border = "1px solid rgba(255,255,255,0.12)"; }, 1500);
+}
+
+/* Blogger API Functions */
+const blogs = [
+    { name: "Blog HTML CSS", url: "https://waumkm.blogspot.com", category: "HTML CSS" },
+    { name: "Bos Tutorial", url: "https://bos-tutorial.blogspot.com", category: "Bisnis" },
+    { name: "AWDev Global", url: "https://awdevglobal.blogspot.com", category: "AI" }
+];
+
+let allPostsData = [];
+const blogContainer = document.getElementById("posts-container");
+
+async function fetchAllBlogs() {
+    try {
+        let fetchedPosts = [];
+        for (let blog of blogs) {
+            try {
+                const idRes = await fetch(`https://www.googleapis.com/blogger/v3/blogs/byurl?url=${blog.url}&key=${BLOG_API_KEY}`);
+                const idData = await idRes.json();
+
+                if (idData.id) {
+                    const postsRes = await fetch(`https://www.googleapis.com/blogger/v3/blogs/${idData.id}/posts?key=${BLOG_API_KEY}&maxResults=3`);
+                    const postsData = await postsRes.json();
+
+                    if (postsData.items) {
+                        postsData.items.forEach(post => {
+                            fetchedPosts.push({
+                                title: post.title,
+                                url: post.url,
+                                published: post.published,
+                                content: post.content,
+                                category: blog.category,
+                                blogName: blog.name
+                            });
+                        });
+                    }
+                }
+            } catch (err) { console.error(`Gagal memuat blog ${blog.url}`); }
+        }
+
+        allPostsData = fetchedPosts.sort((a, b) => new Date(b.published) - new Date(a.published));
+        renderPosts(allPostsData);
+    } catch (error) {
+        blogContainer.innerHTML = "<div>Gagal memuat artikel. (API Key Error / Limit)</div>";
+    }
+}
+
+function renderPosts(posts) {
+    if (posts.length === 0) {
+        blogContainer.innerHTML = "<div>Tidak ada artikel ditemukan.</div>";
+        return;
+    }
+
+    let html = "";
+    posts.forEach(post => {
+        const date = new Date(post.published).toLocaleDateString("id-ID", { day: 'numeric', month: 'short', year: 'numeric' });
+        const snippet = post.content ? post.content.replace(/<[^>]*>?/gm, '').substring(0, 100) + "..." : "";
+        
+        html += `
+        <div class="post">
+            <div>
+                <span class="badge">${post.category}</span>
+                <h3><a href="${post.url}" target="_blank">${post.title}</a></h3>
+                <div class="meta">${date} • ${post.blogName}</div>
+            </div>
+            <p style="font-size:14px; color:var(--muted);">${snippet}</p>
+        </div>`;
+    });
+
+    blogContainer.innerHTML = html;
+}
+
+function filterPosts(category, buttonElement) {
+    document.querySelectorAll(".filters button").forEach(btn => btn.classList.remove("active"));
+    buttonElement.classList.add("active");
+
+    if (category === 'all') {
+        renderPosts(allPostsData);
+    } else {
+        const filtered = allPostsData.filter(p => p.category.includes(category));
+        renderPosts(filtered);
+    }
+}
+
+// Initialize blogs fetch
+fetchAllBlogs();
+</script>
+
+</body>
+</html>
