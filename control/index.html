@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Audio Control - Professional Studio Tools | Rumus Music</title>
+    
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://rumus-music.github.io/control/index.html">
+
+    <!-- Open Graph / Social Meta Tags -->
+    <meta property="og:title" content="Music Audio Control - Professional Studio Tools | Rumus Music">
+    <meta property="og:description" content="Professional web audio control studio with file editing, effects, RTL support, custom canvas view, and instant download.">
+    <meta property="og:image" content="https://rumus-music.github.io/rumusmusic.png">
+    <meta property="og:url" content="https://rumus-music.github.io/control/index.html">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Music Audio Control - Professional Studio Tools | Rumus Music">
+    <meta name="twitter:description" content="Edit, apply audio effects, add files, and customize canvas view online for free.">
+    <meta name="twitter:image" content="https://rumus-music.github.io/rumusmusic.png">
+
+    <!-- Favicon & Logo -->
+    <link rel="icon" type="image/png" href="https://rumus-music.github.io/rumusmusic.png">
+
+    <!-- Verification Tags -->
+    <meta name="google-site-verification" content="c5Cc9r8Eyp-IXdjJjJEtiGejzN98C7KM5g8ONi9ddSk">
+    <meta name="msvalidate.01" content="75301752A004CABDFCDA5430AA1878B1">
+
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4848025323084395" crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
+    <amp-auto-ads type="adsense" data-ad-client="ca-pub-4848025323084395"></amp-auto-ads>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-14JZJ43WTF"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-14JZJ43WTF');
+    </script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Music Audio Control Studio",
+      "url": "https://rumus-music.github.io/control/index.html",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://rumus-music.github.io/control/index.html?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Professional Music Audio Control Studio & Editing Tools",
+      "image": "https://rumus-music.github.io/rumusmusic.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Rumus Music"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Rumus Music",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://rumus-music.github.io/rumusmusic.png"
+        }
+      },
+      "datePublished": "2026-06-01"
+    }
+    </script>
+
+    <!-- CSS Styling (Rainbow Hover, Animated Up, Responsive Design) -->
+    <style>
+        :root {
+            --primary-color: #0b0f19;
+            --secondary-color: #1e293b;
+            --accent-color: #3b82f6;
+            --text-color: #f8fafc;
+            --rainbow-speed: 4s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Video Container */
+        #bg-video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        #bg-video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.25);
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(30, 41, 59, 0.95);
+            padding: 15px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        /* Rainbow Hover Effect */
+        @keyframes rainbow {
+            0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+            20% { color: #ff8800; text-shadow: 0 0 10px #ff8800; }
+            40% { color: #ffff00; text-shadow: 0 0 10px #ffff00; }
+            60% { color: #00ff00; text-shadow: 0 0 10px #00ff00; }
+            80% { color: #00ffff; text-shadow: 0 0 10px #00ffff; }
+            100% { color: #ff00ff; text-shadow: 0 0 10px #ff00ff; }
+        }
+
+        .nav-links a:hover {
+            animation: rainbow var(--rainbow-speed) infinite;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animated Up Effect */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated-up {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 30px 20px 10px;
+        }
+
+        .typing-container {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            min-height: 50px;
+        }
+
+        .typing-text {
+            border-right: 3px solid #38bdf8;
+            white-space: nowrap;
+            animation: blink 0.75s step-end infinite;
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #38bdf8; }
+        }
+
+        /* Professional DAW Interface Container */
+        .studio-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background: rgba(15, 23, 42, 0.92);
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+            border: 1px solid rgba(255,255,255,0.15);
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        /* Menubar Studio */
+        .studio-menubar {
+            background: #090d16;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .menu-items {
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu-dropdown {
+            position: relative;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .menu-dropdown:hover {
+            background: rgba(255,255,255,0.1);
+            color: #38bdf8;
+        }
+
+        .rtl-toggle-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 5px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .rtl-toggle-btn:hover {
+            background: #3b82f6;
+        }
+
+        /* Studio Main Workspace */
+        .studio-workspace {
+            padding: 25px;
+        }
+
+        /* Control Panel Layout */
+        .control-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .control-panel {
+            background: rgba(30, 41, 59, 0.7);
+            padding: 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .control-panel h3 {
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+            color: #38bdf8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .control-group {
+            margin-bottom: 12px;
+        }
+
+        .control-group label {
+            display: block;
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 4px;
+        }
+
+        select, input[type="range"], input[type="file"], input[type="text"], button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        select option {
+            background: #1e293b;
+            color: white;
+        }
+
+        input[type="range"] {
+            accent-color: #3b82f6;
+            cursor: pointer;
+        }
+
+        .btn-action {
+            background: #2563eb;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 5px;
+        }
+
+        .btn-action:hover {
+            background: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        /* Editable Canvas Viewport */
+        .canvas-viewport-box {
+            background: #000;
+            border-radius: 8px;
+            position: relative;
+            height: 250px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255,255,255,0.15);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .canvas-overlay-text {
+            position: relative;
+            z-index: 2;
+            background: rgba(0,0,0,0.6);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            border: 1px dashed rgba(255,255,255,0.3);
+            outline: none;
+            cursor: text;
+        }
+
+        .canvas-overlay-text:focus {
+            border-color: #38bdf8;
+            background: rgba(0,0,0,0.8);
+        }
+
+        /* Action Buttons Row */
+        .action-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* History Activity Box */
+        .history-box {
+            background: rgba(0,0,0,0.4);
+            padding: 12px;
+            border-radius: 6px;
+            max-height: 110px;
+            overflow-y: auto;
+            font-size: 0.85rem;
+        }
+
+        .history-box h4 {
+            color: #38bdf8;
+            margin-bottom: 5px;
+        }
+
+        .history-list {
+            list-style: none;
+        }
+
+        .history-list li {
+            padding: 2px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+            color: #cbd5e1;
+        }
+
+        /* RTL Mode Class */
+        .rtl-mode {
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* Article Section */
+        .article-section {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: rgba(30, 41, 59, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            line-height: 1.8;
+            color: #cbd5e1;
+        }
+
+        .article-section h2, .article-section h3 {
+            color: #fff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .article-section p {
+            margin-bottom: 15px;
+        }
+
+        .article-section a {
+            color: #38bdf8;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body id="mainBody">
+
+    <!-- Background Video Layer -->
+    <div id="bg-video-container">
+        <video id="active-bg-video" autoplay muted loop>
+            <source src="https://rumus-music.github.io/vidio/dubai.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="https://rumus-music.github.io/" class="nav-logo">
+            <img src="https://rumus-music.github.io/rumusmusic.png" alt="Logo">
+            <span>Rumus Music</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="https://rumus-music.github.io/">Home</a></li>
+            <li><a href="#studio">Audio Control Studio</a></li>
+            <li><a href="#article">Article</a></li>
+            <li><a href="https://rumus-music.github.io/downloader/index.html">Downloader</a></li>
+            <li><a href="https://rumus-music.github.io/visualizer/index.html">Visualizer</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero animated-up">
+        <div class="typing-container">
+            <span class="typing-text" id="typing"></span>
+        </div>
+        <p>Professional Web Audio Control Studio with File Management, Effects, Custom Canvas, and RTL Layouts.</p>
+    </section>
+
+    <!-- Professional Studio Interface -->
+    <div class="studio-container animated-up" id="studio">
+        
+        <!-- Menubar Studio -->
+        <div class="studio-menubar">
+            <div class="menu-items">
+                <div class="menu-dropdown" onclick="triggerFileLoad()">📁 File (Open)</div>
+                <div class="menu-dropdown" onclick="triggerSaveProject()">💾 Save Project</div>
+                <div class="menu-dropdown" onclick="resetStudio()">🔄 Edit (Reset)</div>
+                <div class="menu-dropdown" onclick="toggleEffectsPreset()">🎛️ Effect Preset</div>
+            </div>
+            <div>
+                <button class="rtl-toggle-btn" id="rtlToggleBtn" onclick="toggleRTLMode()">Toggle RTL Mode</button>
+            </div>
+        </div>
+
+        <div class="studio-workspace">
+            
+            <!-- Editable Canvas Viewport -->
+            <div class="canvas-viewport-box" id="viewportBox">
+                <canvas id="studioCanvas"></canvas>
+                <!-- Editable Text Layer -->
+                <div class="canvas-overlay-text" id="canvasTextOverlay" contenteditable="true" spellcheck="false">Rumus Music Studio Master</div>
+            </div>
+
+            <!-- Control Panels Grid -->
+            <div class="control-grid">
+                
+                <!-- File & Source Panel -->
+                <div class="control-panel">
+                    <h3>1. Add & Select File</h3>
+                    <div class="control-group">
+                        <label for="customAudioUpload">Upload Local Audio/Music:</label>
+                        <input type="file" id="customAudioUpload" accept="audio/*">
+                    </div>
+                    <div class="control-group">
+                        <label for="presetAudioSelect">Or Select Preset Track:</label>
+                        <select id="presetAudioSelect">
+                            <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">SoundHelix Electronic Master 1</option>
+                            <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">SoundHelix Ambient Mix 2</option>
+                            <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">SoundHelix Synthwave 3</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Audio Mixer & Equalizer Effects Panel -->
+                <div class="control-panel">
+                    <h3>2. Effects & EQ Control</h3>
+                    <div class="control-group">
+                        <label for="filterType">Filter Effect:</label>
+                        <select id="filterType">
+                            <option value="none">Normal (Bypass)</option>
+                            <option value="lowpass">Lowpass (Muffled/Warm)</option>
+                            <option value="highpass">Highpass (Crisp/Sharp)</option>
+                            <option value="bandpass">Bandpass (Radio Effect)</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="playbackRate">Playback Speed: <span id="speedVal">1.0</span>x</label>
+                        <input type="range" id="playbackRate" min="0.5" max="2.0" step="0.1" value="1.0">
+                    </div>
+                </div>
+
+                <!-- Background & Canvas Customizer -->
+                <div class="control-panel">
+                    <h3>3. Canvas & BG View</h3>
+                    <div class="control-group">
+                        <label for="visualizerTheme">Canvas Spectrum Theme:</label>
+                        <select id="visualizerTheme">
+                            <option value="spectrum">Equalizer Bars</option>
+                            <option value="wave">Oscilloscope Wave</option>
+                            <option value="matrix">Digital Matrix Grid</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="videoSelect">Background MP4 Video:</label>
+                        <select id="videoSelect">
+                            <option value="https://rumus-music.github.io/vidio/dubai.mp4">Dubai Skyline</option>
+                            <option value="https://rumus-music.github.io/vidio/istambul.mp4">Istanbul City</option>
+                            <option value="https://rumus-music.github.io/vidio/madinah.mp4">Madinah View</option>
+                            <option value="https://rumus-music.github.io/vidio/masjidqatar.mp4">Masjid Qatar</option>
+                            <option value="https://rumus-music.github.io/vidio/qatarcity.mp4">Qatar City</option>
+                            <option value="https://rumus-music.github.io/vidio/perahu.mp4">River Boat</option>
+                            <option value="https://rumus-music.github.io/vidio/panorama.mp4">Nature Panorama</option>
+                            <option value="https://rumus-music.github.io/vidio/burung.mp4">Flying Birds</option>
+                            <option value="https://rumus-music.github.io/vidio/italia.mp4">Italy View</option>
+                            <option value="https://rumus-music.github.io/vidio/pesawat.mp4">Airplane Flight</option>
+                            <option value="https://rumus-music.github.io/vidio/borobudur.mp4">Borobudur Temple</option>
+                            <option value="https://rumus-music.github.io/vidio/london.mp4">London City</option>
+                            <option value="https://rumus-music.github.io/vidio/swiss.mp4">Swiss Alps</option>
+                            <option value="https://rumus-music.github.io/vidio/dragonworld.mp4">Fantasy World</option>
+                            <option value="https://rumus-music.github.io/vidio/bunga.mp4">Blooming Flowers</option>
+                            <option value="https://rumus-music.github.io/vidio/indah.mp4">Scenic Landscape</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Master Audio Element Player -->
+            <audio id="audioPlayer" crossorigin="anonymous" controls style="width: 100%; margin-bottom: 20px;"></audio>
+
+            <!-- Export & Save Actions Row -->
+            <div class="action-row">
+                <button class="btn-action" id="saveProjectBtn">💾 Save Project (JSON)</button>
+                <button class="btn-action" id="downloadMasterBtn" style="background:#16a34a;">⬇ Download Master Setup</button>
+            </div>
+
+            <!-- History Activity Box -->
+            <div class="history-box">
+                <h4>Studio Control Activity Log</h4>
+                <ul class="history-list" id="historyList">
+                    <li>Professional Audio DAW Studio loaded successfully.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Article Section (English Article with 10 Internal Links & 10 External Links) -->
+    <article class="article-section animated-up" id="article">
+        <h2>Professional Music Audio Control Studio and Editing Tools</h2>
+        <p>Mastering digital sound requires precision control, multi-track support, and adaptive interface layouts. With the <a href="https://rumus-music.github.io/">Rumus Music Main Hub</a>, producers and creators can access our state-of-the-art <a href="https://rumus-music.github.io/control/index.html">Music Audio Control Studio</a>. Featuring real-time audio filtering, customizable canvas graphics, editable text overlays, and multi-directional RTL options, this tool delivers workstation-grade utility directly in your browser.</p>
+        
+        <p>Enhance your production ecosystem by referencing our certified <a href="https://rumus-music.github.io/rumusmusic.png">Official Brand Logo</a> and our signature <a href="https://rumus-music.github.io/img/quran.png">Digital Visual Asset</a>. Combine your customized audio controls with our complementary web utilities like the <a href="https://rumus-music.github.io/downloader/index.html">Quran Audio & MP4 Downloader</a> and the <a href="https://rumus-music.github.io/visualizer/index.html">Free Audio Visualizer Tools</a> for a comprehensive creative suite.</p>
+
+        <h3>Professional Web Standards & Industry References</h3>
+        <p>To deepen your technical expertise in web audio nodes, digital signal processing, and responsive architecture, explore these leading platforms:</p>
+        <ul>
+            <li>1. Master web audio frameworks at <a href="https://developer.mozilla.org" target="_blank" rel="noopener">Mozilla Developer Network</a>.</li>
+            <li>2. Review web standard specifications on <a href="https://www.w3.org" target="_blank" rel="noopener">W3C Web Standards</a>.</li>
+            <li>3. Access open-source code repositories via <a href="https://github.com" target="_blank" rel="noopener">GitHub Open Source</a>.</li>
+            <li>4. Track global technology innovations at <a href="https://techcrunch.com" target="_blank" rel="noopener">TechCrunch Media</a>.</li>
+            <li>5. Explore cloud rendering environments at <a href="https://cloud.google.com" target="_blank" rel="noopener">Google Cloud Platform</a>.</li>
+            <li>6. Read data formats and codec guidelines on <a href="https://en.wikipedia.org/wiki/Audio_file_format" target="_blank" rel="noopener">Wikipedia Audio Formats</a>.</li>
+            <li>7. Analyze engagement performance using <a href="https://analytics.google.com" target="_blank" rel="noopener">Google Analytics Official</a>.</li>
+            <li>8. Build responsive UI frameworks with <a href="https://getbootstrap.com" target="_blank" rel="noopener">Bootstrap Framework</a>.</li>
+            <li>9. Find comprehensive reference documentation at <a href="https://www.britannica.com" target="_blank" rel="noopener">Encyclopaedia Britannica</a>.</li>
+            <li>10. Check streaming telecommunication guidelines at <a href="https://www.itu.int" target="_blank" rel="noopener">International Telecommunication Union</a>.</li>
+        </ul>
+    </article>
+
+    <!-- Footer -->
+    <footer>
+        <div style="text-align: center; padding: 20px; font-family: Arial, sans-serif; font-size: 14px; color: #666; border-top: 1px solid #e0e0e0; margin-top: 40px; background: #070a12;">
+            <p>&copy; rumusmusic. All rights reserved.</p>
+            <p style="margin-top: 10px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="https://rumusmusic.com/" style="color: #1a73e8; text-decoration: none;">Home</a> | 
+                <a href="https://rumusmusic.com/about.html" style="color: #1a73e8; text-decoration: none;">About Us</a> | 
+                <a href="https://rumusmusic.com/blog.html" style="color: #1a73e8; text-decoration: none;">Blog</a> | 
+                <a href="https://rumusmusic.com/contact.html" style="color: #1a73e8; text-decoration: none;">Contact</a> | 
+                <a href="https://rumusmusic.com/privacy-policy.html" style="color: #1a73e8; text-decoration: none;">Privacy Policy</a> | 
+                <a href="https://rumusmusic.com/terms.html" style="color: #1a73e8; text-decoration: none;">Terms & Conditions</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript DAW & Studio Logic -->
+    <script>
+        // Typing Effect in Hero Header
+        const words = ["Music Audio Control Studio", "Professional Web DAW & Effects", "RTL Layout & Canvas Customizer"];
+        let i = 0;
+        let timer;
+
+        function typingEffect() {
+            let word = words[i].split("");
+            var loopTyping = function() {
+                if (word.length > 0) {
+                    document.getElementById('typing').innerHTML += word.shift();
+                } else {
+                    setTimeout(deletingEffect, 2000);
+                    return false;
+                }
+                timer = setTimeout(loopTyping, 100);
+            };
+            loopTyping();
+        }
+
+        function deletingEffect() {
+            let word = words[i].split("");
+            var loopDeleting = function() {
+                if (word.length > 0) {
+                    word.pop();
+                    document.getElementById('typing').innerHTML = word.join("");
+                } else {
+                    i = (i + 1) % words.length;
+                    setTimeout(typingEffect, 500);
+                    return false;
+                }
+                timer = setTimeout(loopDeleting, 50);
+            };
+            loopDeleting();
+        }
+        typingEffect();
+
+        // Elements
+        const audioPlayer = document.getElementById('audioPlayer');
+        const presetAudioSelect = document.getElementById('presetAudioSelect');
+        const customAudioUpload = document.getElementById('customAudioUpload');
+        const videoSelect = document.getElementById('videoSelect');
+        const activeBgVideo = document.getElementById('active-bg-video');
+        const filterTypeSelect = document.getElementById('filterType');
+        const playbackRateInput = document.getElementById('playbackRate');
+        const speedVal = document.getElementById('speedVal');
+        const visualizerTheme = document.getElementById('visualizerTheme');
+        const historyList = document.getElementById('historyList');
+        const canvas = document.getElementById('studioCanvas');
+        const ctx = canvas.getContext('2d');
+        const canvasTextOverlay = document.getElementById('canvasTextOverlay');
+
+        audioPlayer.src = presetAudioSelect.value;
+
+        // Preset Track Selector
+        presetAudioSelect.addEventListener('change', function() {
+            audioPlayer.src = this.value;
+            audioPlayer.play();
+            addHistory(`Loaded preset track: ${this.options[this.selectedIndex].text}`);
+        });
+
+        // Custom File Upload
+        customAudioUpload.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const fileURL = URL.createObjectURL(file);
+                audioPlayer.src = fileURL;
+                audioPlayer.play();
+                addHistory(`Added local custom file: ${file.name}`);
+            }
+        });
+
+        // Background Video Switcher
+        videoSelect.addEventListener('change', function() {
+            activeBgVideo.src = this.value;
+            activeBgVideo.load();
+            activeBgVideo.play();
+            addHistory(`Updated background video scene.`);
+        });
+
+        // Playback Speed Handler
+        playbackRateInput.addEventListener('input', function() {
+            audioPlayer.playbackRate = this.value;
+            speedVal.textContent = this.value;
+            addHistory(`Adjusted playback speed to ${this.value}x`);
+        });
+
+        // Web Audio API Setup with Filters
+        let audioCtx, analyser, sourceNode, biquadFilter;
+        let isAudioInit = false;
+
+        function initAudioContext() {
+            if (isAudioInit) return;
+            try {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioCtx.createAnalyser();
+                biquadFilter = audioCtx.createBiquadFilter();
+                
+                sourceNode = audioCtx.createMediaElementSource(audioPlayer);
+                sourceNode.connect(biquadFilter);
+                biquadFilter.connect(analyser);
+                analyser.connect(audioCtx.destination);
+                
+                analyser.fftSize = 256;
+                isAudioInit = true;
+            } catch(e) {
+                console.log("AudioContext restriction notice");
+            }
+        }
+
+        audioPlayer.addEventListener('play', () => {
+            initAudioContext();
+            if (audioCtx && audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+        });
+
+        // Filter Effect Handler
+        filterTypeSelect.addEventListener('change', function() {
+            initAudioContext();
+            if (!biquadFilter) return;
+            let val = this.value;
+            if (val === 'none') {
+                biquadFilter.type = 'allpass';
+                addHistory(`Audio Effect: Normal (Bypass)`);
+            } else if (val === 'lowpass') {
+                biquadFilter.type = 'lowpass';
+                biquadFilter.frequency.setValueAtTime(800, audioCtx.currentTime);
+                addHistory(`Audio Effect: Lowpass Filter active`);
+            } else if (val === 'highpass') {
+                biquadFilter.type = 'highpass';
+                biquadFilter.frequency.setValueAtTime(1200, audioCtx.currentTime);
+                addHistory(`Audio Effect: Highpass Filter active`);
+            } else if (val === 'bandpass') {
+                biquadFilter.type = 'bandpass';
+                biquadFilter.frequency.setValueAtTime(1000, audioCtx.currentTime);
+                addHistory(`Audio Effect: Bandpass Filter active`);
+            }
+        });
+
+        // Resize Canvas Viewport
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.offsetWidth;
+            canvas.height = canvas.parentElement.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // Render Canvas Spectrum Loop
+        function drawStudioCanvas() {
+            requestAnimationFrame(drawStudioCanvas);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            let bufferLength = analyser ? analyser.frequencyBinCount : 64;
+            let dataArray = new Uint8Array(bufferLength);
+            
+            if (analyser && isAudioInit) {
+                analyser.getByteFrequencyData(dataArray);
+            } else {
+                for (let j = 0; j < bufferLength; j++) {
+                    dataArray[j] = Math.floor(Math.abs(Math.sin(Date.now()*0.003 + j)*40));
+                }
+            }
+
+            let theme = visualizerTheme.value;
+            let centerX = canvas.width / 2;
+            let centerY = canvas.height / 2;
+
+            if (theme === 'spectrum') {
+                let barWidth = (canvas.width / bufferLength) * 2.2;
+                let barHeight;
+                let x = 0;
+                for (let i = 0; i < bufferLength; i++) {
+                    barHeight = dataArray[i] * 0.75;
+                    ctx.fillStyle = `rgb(${barHeight + 40}, 140, 255)`;
+                    ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+                    x += barWidth + 1;
+                }
+            } else if (theme === 'wave') {
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = '#38bdf8';
+                ctx.beginPath();
+                let sliceWidth = canvas.width / bufferLength;
+                let x = 0;
+                for (let i = 0; i < bufferLength; i++) {
+                    let v = dataArray[i] / 128.0;
+                    let y = v * centerY;
+                    if (i === 0) ctx.moveTo(x, y);
+                    else ctx.lineTo(x, y);
+                    x += sliceWidth;
+                }
+                ctx.lineTo(canvas.width, centerY);
+                ctx.stroke();
+            } else if (theme === 'matrix') {
+                ctx.fillStyle = '#22c55e';
+                ctx.font = '14px monospace';
+                for (let i = 0; i < bufferLength; i += 4) {
+                    let textChar = String.fromCharCode(65 + (dataArray[i] % 26));
+                    let x = (i / bufferLength) * canvas.width;
+                    let y = (dataArray[i] / 256) * canvas.height;
+                    ctx.fillText(textChar, x, y);
+                }
+            }
+        }
+        drawStudioCanvas();
+
+        // Menubar Actions & Utilities
+        function triggerFileLoad() {
+            customAudioUpload.click();
+        }
+
+        function triggerSaveProject() {
+            let projectData = {
+                title: canvasTextOverlay.textContent,
+                audioSource: audioPlayer.src,
+                filter: filterTypeSelect.value,
+                speed: playbackRateInput.value,
+                theme: visualizerTheme.value,
+                background: videoSelect.value,
+                timestamp: new Date().toISOString()
+            };
+            let blob = new Blob([JSON.stringify(projectData, null, 2)], {type: 'application/json'});
+            let url = URL.createObjectURL(blob);
+            let a = document.createElement('a');
+            a.href = url;
+            a.download = 'rumus_music_project.json';
+            a.click();
+            addHistory('Saved project configuration JSON successfully.');
+        }
+
+        function resetStudio() {
+            audioPlayer.currentTime = 0;
+            playbackRateInput.value = 1.0;
+            speedVal.textContent = "1.0";
+            audioPlayer.playbackRate = 1.0;
+            filterTypeSelect.value = "none";
+            canvasTextOverlay.textContent = "Rumus Music Studio Master";
+            addHistory('Studio workspace reset to default settings.');
+        }
+
+        function toggleEffectsPreset() {
+            filterTypeSelect.value = filterTypeSelect.value === 'lowpass' ? 'none' : 'lowpass';
+            filterTypeSelect.dispatchEvent(new Event('change'));
+            addHistory('Toggled quick effect preset.');
+        }
+
+        // RTL Layout Toggle Function
+        function toggleRTLMode() {
+            const mainBody = document.getElementById('mainBody');
+            mainBody.classList.toggle('rtl-mode');
+            const isRtl = mainBody.classList.contains('rtl-mode');
+            document.getElementById('rtlToggleBtn').textContent = isRtl ? "Disable RTL Mode" : "Toggle RTL Mode";
+            addHistory(`Switched layout mode: ${isRtl ? 'RTL (Right-to-Left)' : 'LTR (Left-to-Right)'}`);
+        }
+
+        // Master Download Setup Button Action
+        document.getElementById('saveProjectBtn').addEventListener('click', triggerSaveProject);
+        
+        document.getElementById('downloadMasterBtn').addEventListener('click', function() {
+            let a = document.createElement('a');
+            a.href = videoSelect.value;
+            a.download = 'Master_Studio_Background.mp4';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            addHistory('Downloaded master video package bundle.');
+        });
+
+        function addHistory(text) {
+            const li = document.createElement('li');
+            li.textContent = `[${new Date().toLocaleTimeString()}] ${text}`;
+            historyList.prepend(li);
+        }
+    </script>
+</body>
+</html>
